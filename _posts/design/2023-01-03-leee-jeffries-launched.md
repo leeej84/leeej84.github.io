@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Leee Jeffries, LJC, Launches Blog Site"
+title: "Leee Jeffries, Launches Blog Site"
 date: 2023-01-03
 ---
 
