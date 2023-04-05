@@ -27,7 +27,7 @@ This may seem like a small thing, but in the grand scheme of things, it slows my
 
 Anyway. Pay-for solutions will fix this issue for you, but I stumbled across this lovely little tool in a forum.
 
-[E](https://github.com/valinet/ExplorerPatcher)[xplorerPatcher](https://github.com/valinet/ExplorerPatcher)
+[E](https://github.com/valinet/ExplorerPatcher)[xplorerPatcher](https://github.com/valinet/ExplorerPatcher){:target="_blank"}
 
 This little tool created by Gabriel Radu allows you to essentially hybrid the Windows 11 start menu and Windows 10 taskbar, so now I can have never combine again!
 
