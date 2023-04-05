@@ -24,7 +24,7 @@ email: leee.jeffries@leeejeffries.com
 description: >- # this means to ignore newlines until "baseurl:"
   A blog all about my experiences in EUC using all types of technologies, tips and tricks.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.leeejeffries.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://leeejeffries.com" # the base hostname & protocol for your site, e.g. http://example.com
 repository: leeej84/leeejeffries.github.io
 twitter: leeejeffries
 github: leeej84
