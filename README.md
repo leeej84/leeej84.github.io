@@ -1,172 +1,186 @@
-# mere-blog-theme
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/brennanbrown/purelog">
+    <img src="/assets/profile.png" alt="Logo" width="120" height="120">
+  </a>
 
-[![Gem Version](https://badge.fury.io/rb/mere-blog-theme.svg)](https://badge.fury.io/rb/mere-blog-theme) 
-![Gem](https://img.shields.io/gem/dt/mere-blog-theme)
+  <h3 align="center">Purelog Theme for Jekyll</h3>
 
-Mere is a minimal and simple blog theme, and nothing more, for use with Jekyll and GitHub Pages. It has been built with the Bulma frontend framework.
+  <p align="center">
+    A responsive, well-designed template to help you get started on your next blog or website.
+    <br />
+    <a href="https://github.com/brennanbrown/purelog"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <strong><a href="https://purelog.netlify.app">View Demo</a></strong>
+    ·
+    <a href="https://github.com/brennanbrown/purelog/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/brennanbrown/purelog/issues">Request Feature</a>
+  </p>
+</p>
 
-It has a homepage which displays the latest 6 posts and a paginated blog page used to list out all blog posts. 
+<!-- BADGES -->
+<p align="center">
+<a href="https://app.netlify.com/sites/purelog/deploys"><img src="https://api.netlify.com/api/v1/badges/062e333f-9e9d-440d-9b40-16d11959793d/deploy-status" alt="Netlify Status"></a>
+<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/brennanbrown/purelog">
+<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/brennanbrown/purelog">
+<a href="https://github.com/brennanbrown/purelog/search?l=html"><img alt="GitHub top language" src="https://img.shields.io/github/languages/top/brennanbrown/purelog"></a>
+<a href="https://github.com/brennanbrown/purelog/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/brennanbrown/purelog"></a>
+<a href="https://github.com/brennanbrown/purelog/commits/main"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/brennanbrown/purelog"></a>
+<a href="https://github.com/brennanbrown/purelog/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/brennanbrown/purelog"></a>
+<a href="https://purelog.netlify.app"><img alt="Website" src="https://img.shields.io/website?down_color=red&down_message=Offline%21&label=Status&up_color=darkgreen&up_message=Online%21&url=https%3A%2F%2Fpurelog.netlify.app"></a>
+<br />
+<a href="https://github.com/brennanbrown?tab=followers"><img alt="GitHub followers" src="https://img.shields.io/github/followers/brennanbrown?label=Follow%20Me%21&style=social"></a>
+<a href="https://github.com/brennanbrown/purelog/watchers"><img alt="GitHub watchers" src="https://img.shields.io/github/watchers/brennanbrown/purelog?label=Watch%21&style=social"></a>
+<a href="https://github.com/brennanbrown/purelog/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/brennanbrown/purelog?label=Star%21&style=social"> </a>
+<a href="https://github.com/brennanbrown/purelog/network/members"><img alt="GitHub forks"src="https://img.shields.io/github/forks/brennanbrown/purelog?label=Fork%21&style=social"></a>
+</p>
 
-**Mere Blog Theme uses Jekyll 3.9 for compatibility with GitHub Pages**
+<!-- ABOUT THE PROJECT -->
 
+## About The Project
+
+**Purelog** is a responsive, sidebar theme for the popular JAMstack generator Jekyll that only uses the minimal [**Pure.css** framework](https://github.com/pure-css/pure) (hence the name!), while still following the best practices possible for accessibility and search-engine optimization.
+
+I created this after finishing [Watery](https://github.com/brennanbrown/watery) (which this theme is built off of), as a way to add more functionality and design while still remaining as lightweight as possible.
+
+This project is aimed towards those looking for an interesting theme for Jekyll that has features that aren't found commonly elsewhere, specifically having separate sections dedicated towards: blogging, note-taking, and daily journal entries.
+
+![Purelog Screen Shot](https://i.postimg.cc/NfxJvZgx/purelog2.png)
+
+### Features
+
+Here are a few interesting features of this Jekyll theme:
+
+- A fully customizable and empty `_BLANK_config.yml` to make getting up-and-running easy.
+- A speedy, on-site search function using [Simply Jekyll Search](https://github.com/christian-fei/Simple-Jekyll-Search).
+- Custom collections for different types of material (note-taking, journal writing, etc.)
+- An auto-generating archive page that displays all entries from _all_ collections.
+- Auto-generating tags and categories pages.
+- Having a `_pages` collection for easier organization.
+- An author bio at the end of each post. (Located in `_inclues/author.html`)
+- Full Rouge support for syntax highlighting. (Currently using `base16.solarized.light`)
+- Auto-generated RSS feed, sitemap, accessibility features, and search-engine optimization.
 
 ## Installation
 
-Add this line to your Jekyll site's `Gemfile`:
+### Prerequisites
 
-```ruby
-gem "mere-blog-theme"
+Jekyll requires the following:
+
+- Ruby version **2.5.0** or higher
+- RubyGems
+- GCC and Make
+
+See [Requirements](https://jekyllrb.com/docs/installation/#requirements) for guides and details.
+
+### Instructions
+
+1. Install all [prerequisites](https://jekyllrb.com/docs/installation/).
+2. Install the jekyll and bundler [gems](https://jekyllrb.com/docs/ruby-101/#gems).
+
+```
+gem install jekyll bundler
 ```
 
-And add this line to your Jekyll site's `_config.yml`:
+3. Clone this repository.
 
-```yaml
-theme: mere-blog-theme
+```
+git clone https://github.com/brennanbrown/purelog.git
 ```
 
-And then execute:
+4. Change into your new directory.
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install mere-blog-theme
-
-## Usage
-
-* [Blog Setup](#blog-setup)
-* [Posts](#posts)
-    * [Post Intro](#post-intro)
-* [Homepage](#homepage)
-* [Authors](#authors)
-* [Google Analytics](#google-analytics)
-
-### Blog Setup
-
-As of 0.4, the blog posts will be displayed on the homepage including pagination, instead of in a separate blog page. 
-
-**The homepage page needs to be called index.html for the blog pagination**
-
-Set the paginator up in the `_config.yml` file with the posts per page and the path to the blog.
-
-```yaml
-paginate: 6
-paginate_path: "/page:num"
+```
+cd purelog
 ```
 
-### Posts
+5. Install gems from the `Gemfile`.
 
-Posts should be created in the _posts directory as per standard Jekyll usage. The front matter should contain the layout of post, the image to use in the header and the homepage / blog page, the title of the post and the author of the post. You can also set a subtitle for the post if you want to.
-
-```yaml
-layout: post
-title: First Post
-image: /img/home.jpg
-author: C.S. Rhymes
+```
+bundle install
 ```
 
-Wide images will work best, with a minimum width of 1400px. 
+6. Build the site and make it available on a local server.
 
-#### Post Intro
-
-Version 0.3 allows you to provide a intro and an intro image in your frontmatter. When creating your post add a short `intro` text an `intro_image` as a path to an image and then specify the `intro_image_ratio` which should be a [Bulma image](https://bulma.io/documentation/elements/image/) class. 
-
-```yaml
-layout: post
-title: Post with Intro
-author: Guest Author
-intro: This is the introduction text for this post. It appears large and bold at the top of the post
-intro_image: /img/home.jpg
-intro_image_ratio: is-16by9
+```
+bundle exec jekyll serve
 ```
 
-Only the intro is required if you want to display it. If you don't want an image then don't specify one and just the intro text will display.
+7. Browse to [http://localhost:4000](http://localhost:4000)
 
-### Homepage
+If you encounter any errors during this process, check that you have installed all the prerequisites in [Requirements](https://jekyllrb.com/docs/installation/#requirements).
 
-Finally, configure the homepage by creating an `index.html` page and configure the frontmatter with the layout of homepage, the title, subtitle (optional) and the image. You can set the hero_height to is-large if you want to make the homepage header a bit larger. 
+If you still have issues, see [Troubleshooting](https://jekyllrb.com/docs/troubleshooting/#configuration-problems).
 
-```yaml
-layout: homepage
-title: Mere Blog Theme
-subtitle: This is the demo site for the Mere Blog Theme
-image: /img/home.jpg
-hero_height: is-large
-```
+## Getting Started
 
-### Authors
+Once you have Jekyll up-and-running, there are only a few steps needed to make this theme your own:
 
-To enable the authors section, create a directory named `_authors` and create a page for each author within it. The author pages should have front matter in the following format. 
+1. Fill out the `_BLANK_config.yml` configuration file and replace the current `_config.yml`
+2. Remove the `example_posts` folder in `_posts`, `_notes`, `_journals` and start writing your own!
+3. Modify or remove the pages in `_pages` to however you see fit.
+4. _(Optional)_ Modify or remove this `README.md` with information about your own project or blog.
+5. _(Optional)_ Modify the CSS files in the `assets` folder to customize the site.
 
-**NOTE** The author name should match the author name in their posts exactly. 
+<!-- ROADMAP -->
 
-```yaml
-layout: author
-title: The authors page title
-name: Author Name
-position: Web Designer
-description: The short description of the author
-avatar: /img/avatar.png
-website: https://www.csrhymes.com
-```
+## Roadmap
 
-The website and avatar are optional, but if you are stuck for author images, why not try [https://getavataaars.com](https://getavataaars.com). Square images work best. You can then write about the author in the page content. 
- 
-Next, create an `authors.md` page in the root of your site and set the layout to authors.
+There are several features that I'm still planning to create and integrate, including:
 
-```yaml
-layout: authors
-title: Authors
-description: The authors page
-```
+- Create a [Theme Gem](https://jekyllrb.com/docs/themes/#publishing-your-theme)
+- Add easy and automatic buttons to ["Deploy to Netlify"](https://docs.netlify.com/site-deploys/create-deploys/#deploy-to-netlify-button), Heroku, etc.
+- Add Travis continious integration checks
+- Add additional documentation for creating custom collections and auto generated pages
+- Add more example posts and articles
 
-Add authors as a collection in your _config.yml file with output set to true so the pages are generated. 
+See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
 
-```yaml
-collections:
-  authors:
-    output: true
-```
-
-When you build your site, the authors link will appear in the navbar. The authors page will display the authors you have added. You can then click on their name or image to view the author page, along with a list of their 4 latest posts. 
-
-There will also be a link back to the authors page at the bottom of the post. 
-
-#### Author Social Profiles
-
-**New in 0.2.1 **
-
-You can add links to an author's social profile pages by adding the profile name and link to the front matter in the author's page (such as _authors/chris.md). The below social profiles are available.
-
-```yaml
-facebook: https://www.facebook.com/
-twitter: https://www.twitter.com/
-github: https://www.github.com/
-gitlab: https://www.gitlab.com
-instagram: https://www.instagram.com
-linkedin: https://www.linkedin.com/
-medium: https://www.medium.com/
-stack_overflow: https://stackoverflow.com/
-```
-
-### Google Analytics
-
-To enable Google Analytics add `google_analytics: UA-xxxxxxxx` to your `_config.yml` replacing the UA-xxxxxxxx with your Google Analytics property.
+<!-- CONTRIBUTING -->
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/chrisrhymes/mere-blog-theme. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-## Development
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-To set up your environment to develop this theme, run `bundle install`.
-
-Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
-
-When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
-To add a custom directory to your theme-gem, please edit the regexp in `mere-blog-theme.gemspec` accordingly.
+<!-- LICENSE -->
 
 ## License
 
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+Distributed under the MIT License. You can use this project however you see fit without needing to give attribution.
 
+See `LICENSE` for more information.
+
+## Resources
+
+While creating this theme, I came across a lot of helpful and hard-to-find resources. If you'd like to dive deeper into Jekyll, check them out:
+
+- Jumping Into Jekyll: <https://dev.to/brennan/jumping-into-jekyll-4o9h>
+- Jekyll Cheatsheet: <https://devhints.io/jekyll>
+- Course on Jekyll: <https://learn-the-web.algonquindesign.ca/topics/jekyll/>
+- Jekyll for Designers: <http://simpleprimate.com/jekyll-for-designers/index.html>
+- Dynamic Copyright on Jekyll: <https://michaelsoolee.com/jekyll-copyright/>
+- Creating breadcrumbs in Jekyll: <https://jekyllcodex.org/without-plugin/breadcrumbs/>
+- Display all items from ALL collections: <https://stackoverflow.com/questions/31171041/listing-all-collections-in-jekyll>
+
+### Other Resources
+
+- For markdown previews: <https://jaspervdj.be/lorem-markdownum/>
+- Case Study on webfont performance: <https://www.keycdn.com/blog/web-font-performance>
+- An extensive `.gitignore`: <https://miguelmota.com/bytes/extensive-gitignore/>
+
+## Credit
+
+[**Pure.css**](https://purecss.io/) was created by the [Pure CSS](https://github.com/pure-css) group.
+
+[**Simple Jekyll Search**](https://github.com/christian-fei/Simple-Jekyll-Search) was created by [Christian Fei](https://github.com/christian-fei).
+
+Various notes and ideas were taken from [**Simply Jekyll**](https://github.com/raghuveerdotnet/simply-jekyll) by [Raghuveer S.](https://github.com/raghuveerdotnet).
