@@ -11,7 +11,7 @@ If you have on-prem windows server or desktop licenses, these licenses can be ut
 Here is a link that explains about this in detail.
 
   
-[Explore Azure Hybrid Benefit for Windows VMs - Azure Virtual Machines \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/virtual-machines/windows/hybrid-use-benefit-licensing)
+[Explore Azure Hybrid Benefit for Windows VMs - Azure Virtual Machines \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/virtual-machines/windows/hybrid-use-benefit-licensing){:target="_blank"}
   
 If you’ve been creating VM’s manually you may have missed this tick box, if its terraform then this is the line you are looking for, powershell also.  
 **Azure:**
