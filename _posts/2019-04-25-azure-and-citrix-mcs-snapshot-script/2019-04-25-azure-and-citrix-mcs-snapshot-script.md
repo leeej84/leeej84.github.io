@@ -18,7 +18,7 @@ I wrote a script a while back to handle this and wanted to share it.
 
 The script will copy the vhd file from your master VM into a different storage container in the same storage account and give it a date and time suffix. Using this format you have full rollback opportunities between any previous versions of the image.
 
-\[cc lang=powershell\]
+{%  %}
 #Azure Subscription ID
 $subID = ""
 
