@@ -9,8 +9,10 @@ This can be ahieved by installing the RAS client on your LoginVSI Launcher and e
 
 ![](images/012519_0924_Creatingacu1.png)
 
-\[cc\]C:\\Program Files\\Parallels\\Client\\TSClient.exe s!='{Server}' t!='443' m!='2' r! u!='{Username}@{Domain}' q!='{Password}' a!='#1'\[/cc\]
+{% highlight powershell %}
+C:\Program Files\Parallels\Client\TSClient.exe s!='{Server}' t!='443' m!='2' r! u!='{Username}@{Domain}' q!='{Password}' a!='#1'
+{% endhighlight %}
 
 The full syntax for the connection string can be found here:
 
-[https://kb.parallels.com/en/123825](https://kb.parallels.com/en/123825)
+[https://kb.parallels.com/en/123825](https://kb.parallels.com/en/123825){:target="_blank"}

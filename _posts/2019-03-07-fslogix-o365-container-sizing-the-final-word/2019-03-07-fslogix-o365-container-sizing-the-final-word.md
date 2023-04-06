@@ -13,7 +13,7 @@ I'm happy to announce that this testing is now complete, and we have produced so
 
 A white paper is available here:
 
-[FSLogix Office 365 Contrainer Scalability and Sizing.pdf](https://www.leeejeffries.com/wp-content/uploads/2019/03/FSlogix-Office-365-Container-Scalability-and-Sizing-V1.0.pdf)
+[FSLogix Office 365 Contrainer Scalability and Sizing.pdf](https://leeejeffries-my.sharepoint.com/:b:/p/leee_jeffries/Ed4KCS9u1gtHhW9NfepTe_0BGHJ_yVtkoE5MXC_j3TJpTA?e=zzfAZs){:target="_blank"}
 
 For those interested in the summary results, keep reading.
 
@@ -23,7 +23,7 @@ The environment used for testing is depicted below.
 
 ![](images/Diagram.png)
 
-This environment was built in an automated fashion using AzureRM Templates which I created in VSCode. These templates are available for re-use and can be found in the [FSLogix GitHub Repository](https://github.com/FSLogix/Storage.Testing/).
+This environment was built in an automated fashion using AzureRM Templates which I created in VSCode. These templates are available for re-use and can be found in the [FSLogix GitHub Repository](https://github.com/FSLogix/Storage.Testing/){:target="_blank"}.
 
 I won't go into detail on how these templates are used as there is an introductory document within the repo that explains how the solution works.
 
@@ -57,4 +57,4 @@ The below table shows examples of sizing taking an average of all tests and mult
 
 Read IOPS don't cost much and Write IOPS of 5 per user is a nice low value. The folks at FSLogix have mentioned that with Cloud cache this could be even lower reducing the IOP load on the backend storage in a similar way to MCS/PVS Disk Caching.
 
-For all the details and full write-up and results please do take a look at the whitepaper - [FSLogix Office 365 Contrainer Scalability and Sizing.pdf](https://www.leeejeffries.com/wp-content/uploads/2019/03/FSlogix-Office-365-Container-Scalability-and-Sizing-V1.0.pdf)
+For all the details and full write-up and results please do take a look at the whitepaper - [FSLogix Office 365 Contrainer Scalability and Sizing.pdf](https://leeejeffries-my.sharepoint.com/:b:/p/leee_jeffries/Ed4KCS9u1gtHhW9NfepTe_0BGHJ_yVtkoE5MXC_j3TJpTA?e=zzfAZs){:target="_blank"}

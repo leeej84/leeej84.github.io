@@ -69,7 +69,7 @@ These are the basic steps for deployment:
 6. Create AD Accounts and Publish Resources
 7. Configure the Environment in the LoginPI Management Server
 
-Although the steps are not identical the theory is the same as the original LoginPI. I wrote a full installation blog post entitled "[Truly Proactive Monitoring with LoginPI](https://www.leeejeffries.com/truly-proactive-monitoring-with-loginpi/)"
+Although the steps are not identical the theory is the same as the original LoginPI. I wrote a full installation blog post entitled "[Truly Proactive Monitoring with LoginPI]({% post_url 2018-05-11-truly-proactive-monitoring-with-loginpi/2018-05-11-truly-proactive-monitoring-with-loginpi %})"
 
 ## Summary and Final Thoughts
 
@@ -77,6 +77,6 @@ This new release of LoginPI seems a lot more joined up to me, the interface slee
 
 There is an option to be able to create a custom connector which can be a script of such placed on the launcher, this opens some great possibilities; imagine having a test that will run a PowerShell script to upgrade your Golden Image, snapshot it and then push out an MCS update before connecting the virtual user. You can have an automatic indication of the impact on your latest image, better still. Roll it into preproduction and compare it with production ongoing.
 
-As [@XenAppBlog](https://twitter.com/xenappblog) would say – be the Automator not the automated!
+As [@XenAppBlog](https://twitter.com/xenappblog){@target="_blank"} would say – be the Automator not the automated!
 
 If you haven't tried it, try it!
