@@ -51,4 +51,4 @@ The final solution, I checked for the existence of the "Citrix Workspace Updater
 
 - CLIENT.SVC(CWAUpdaterService) EXISTS
 
-I hope this saves someone some time. In the interim of me putting this live, some other nifty solutions were published; a shout out to [Dennis Mohrmann](https://twitter.com/mohrpheus78) for his script that notifies users of the fact their client-side receiver is out of date. Check it out here: [MS Teams Optimisation Check](https://github.com/Mohrpheus78/Citrix/tree/main/Teams%20Optimization%20check).
+I hope this saves someone some time. In the interim of me putting this live, some other nifty solutions were published; a shout out to [Dennis Mohrmann](https://twitter.com/mohrpheus78){:target="_blank"} for his script that notifies users of the fact their client-side receiver is out of date. Check it out here: [MS Teams Optimisation Check](https://github.com/Mohrpheus78/Citrix/tree/main/Teams%20Optimization%20check){:target="_blank"}.

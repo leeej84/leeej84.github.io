@@ -23,14 +23,14 @@ Firstly, there is a change in behaviour. PowerScale would always power on machin
 Secondly, PowerScale has always been able to scale up machine dynamically based on performance metrics or triggers such as CPU, Memory, Session Count or Load Index; this works fine and works well during a steady state. I had a request for the machines to scale in the morning during peak login periods automatically, this works, but sometimes the machines do not power on fast enough based on your polling interval.  
 I've added an additional scaling window, during a period specified you can choose to power on more than one instance at a time.
 
-Thirdly, Business days have been added so you can specify with days the business runs on. Kudos to [https://github.com/mrieder](https://github.com/mrieder) for this contribution.
+Thirdly, Business days have been added so you can specify with days the business runs on. Kudos to [https://github.com/mrieder](https://github.com/mrieder){:target="_blank"} for this contribution.
 
-I also need to thank [https://github.com/PSlator](https://github.com/PSlator) (Phil Slator) for this contributions too.
+I also need to thank [https://github.com/PSlator](https://github.com/PSlator){:target="_blank"} (Phil Slator) for this contributions too.
 
 As always, please let me know if you get this installed and then require any help. There is a slack channel right here or issue on GitHub.
 
 Release:  
-[https://github.com/leeej84/PowerScale/releases/tag/2.6](https://github.com/leeej84/PowerScale/releases/tag/2.6)
+[https://github.com/leeej84/PowerScale/releases/tag/2.6](https://github.com/leeej84/PowerScale/releases/tag/2.6){:target="_blank"}
 
 Slack:  
-[https://worldofeuc.slack.com/messages/CLCSCA8LR](https://worldofeuc.slack.com/messages/CLCSCA8LR)
+[https://worldofeuc.slack.com/messages/CLCSCA8LR](https://worldofeuc.slack.com/messages/CLCSCA8LR){:target="_blank"}

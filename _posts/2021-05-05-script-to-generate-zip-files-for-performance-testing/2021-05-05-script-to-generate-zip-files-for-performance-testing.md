@@ -14,7 +14,7 @@ Dependent on how big you want your zip files to be, just increase the MaxMediaFi
 If you find this script useful of think it could do with a few adjustments please let me know.
 
 Random content bundle is available for download here:  
-[https://www.leeejeffries.com/wp-content/uploads/2018/09/Random-Content.zip](https://www.leeejeffries.com/wp-content/uploads/2018/09/Random-Content.zip)
+[Random-Content.zip](https://leeejeffries-my.sharepoint.com/:u:/p/leee_jeffries/EZtHB7ripE5Gs1f8o8s4dLEBx7tdGgPqFhVtdLm4Nor-yw?e=dxzroz){:target="_blank"}
 
 Code:  
 

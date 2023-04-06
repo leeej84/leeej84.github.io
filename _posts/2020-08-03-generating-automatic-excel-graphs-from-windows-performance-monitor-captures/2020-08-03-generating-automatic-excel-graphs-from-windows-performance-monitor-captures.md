@@ -5,15 +5,15 @@ date: "2020-08-03"
 
 ![](images/080320_1636_Generatinga1.png)
 
-When running performance tests, it's imperative to be able to visualise any data available. As part of my LoginVSI test runs, I test to use a complete automated framework that I shared previously in another blog post - [Automating LoginVSI Load Testing and Performance Capture](https://www.leeejeffries.com/automating-loginvsi-load-testing-and-performance-capture/).
+When running performance tests, it's imperative to be able to visualise any data available. As part of my LoginVSI test runs, I test to use a complete automated framework that I shared previously in another blog post - [Automating LoginVSI Load Testing and Performance Capture]({% post_url 2019-10-11-automating-loginvsi-load-testing-and-performance-capture/2019-10-11-automating-loginvsi-load-testing-and-performance-capture %}){:target="_blank"}.
 
-I wanted a solution to be able to create automatic graphs from my tests without having to do anything manually, thanks to [Ryan Ververs-Bijerk](https://www.linkedin.com/in/ryanbijkerk/) of [Logit Blog](https://www.logitblog.com/) and [Go-EUC](https://www.go-euc.com/index.html), there is an excellent simple solution.
+I wanted a solution to be able to create automatic graphs from my tests without having to do anything manually, thanks to [Ryan Ververs-Bijerk](https://www.linkedin.com/in/ryanbijkerk/){:target="_blank"} of [Logit Blog](https://www.logitblog.com/){:target="_blank"} and [Go-EUC](https://www.go-euc.com/index.html){:target="_blank"}, there is an excellent simple solution.
 
 Ryan has made a tool called PPD:
 
-Binary:[https://www.logitblog.com/tooling/parse-performance-data/](https://www.logitblog.com/tooling/parse-performance-data/)
+Binary:[https://www.logitblog.com/tooling/parse-performance-data/](https://www.logitblog.com/tooling/parse-performance-data/){:target="_blank"}
 
-Source:[https://github.com/RyanBijkerk/ppd](https://github.com/RyanBijkerk/ppd)
+Source:[https://github.com/RyanBijkerk/ppd](https://github.com/RyanBijkerk/ppd){:target="_blank"}
 
 This tool will take a Windows Performance Monitor CSV capture and convert that data directly into an Excel Graph. Tagging this into a Get-ChildItem and ForEach () is PowerShell means we can effectively convert all our CSV performance file in one swoop.
 

@@ -11,9 +11,9 @@ I've had the pleasure of working with LoginVSI many times in the past and am use
 
 Unfortunately Login Enterprise does not have the same workloads. I'll tell you what it does have though! It has a snazzy new scripting language that you can do a lot more with.
 
-I've been looking at coding up some additions to the workload templates that are stored on the website. You can find some examples for common applications on the [download pages](https://loginvsi.com/54-landing-pages/1240-workload-templates).
+I've been looking at coding up some additions to the workload templates that are stored on the website. You can find some examples for common applications on the [download pages](https://loginvsi.com/54-landing-pages/1240-workload-templates){:target="_blank"}.
 
-Initially I wanted to add some decompression runs into the workload. I wrote about a script I created to generate some [random zip files with dummy content](https://www.leeejeffries.com/script-to-generate-zip-files-for-performance-testing/). I'm going to be using those zip files here.
+Initially I wanted to add some decompression runs into the workload. I wrote about a script I created to generate some [random zip files with dummy content]({% post_url 2018-09-17-script-for-generating-random-email-content-for-testing/2018-09-17-script-for-generating-random-email-content-for-testing %}){:target="_blank"}. I'm going to be using those zip files here.
 
 Now, lets talk about the workload I created. The workload will loop a random number of times, it will select a random zip file for each run, copy that down to the machine and then extract it. The cleanup process runs are each loop to ensure all folders are clean for the next.
 
@@ -24,7 +24,7 @@ The application I've written time each copy operation, unzip operation and the w
     - Amend "maxZips" to the maximum number of zip files you have available to you.
     - Amend "zipPath" to the share location where you are storing your zip files.
 
-I have pre-prepared 50 template zip files of varying sizes can be [downloaded here](https://www.leeejeffries.com/wp-content/uploads/2021/05/Prepared_Zips.zip).
+I have pre-prepared 50 template zip files of varying sizes can be [downloaded here](https://leeejeffries-my.sharepoint.com/:u:/p/leee_jeffries/EVS76SWD9XBEg66w9sPPAK0B-0pOjuu6coQuqO33OlOR-Q?e=J7W2rQ){:target="_blank"}.
 
 When you import the application into Login Enterprise you can input any application, the script does not actually launch the application specified.
 

@@ -17,7 +17,7 @@ If I tested the SAML authentication without NFactor it worked absolutely fine. S
 
 I reached out to my learned colleagues on slack and Mads Petersen was able to give me the answer to my question.
 
-Microsoft states here: [https://docs.microsoft.com/en-us/azure/active-directory/develop/single-sign-on-saml-protocol](https://docs.microsoft.com/en-us/azure/active-directory/develop/single-sign-on-saml-protocol) Azure AD ignores the subject element of the AuthnRequest but it doesn't.
+Microsoft states here: [https://docs.microsoft.com/en-us/azure/active-directory/develop/single-sign-on-saml-protocol](https://docs.microsoft.com/en-us/azure/active-directory/develop/single-sign-on-saml-protocol){:target="_blank"} Azure AD ignores the subject element of the AuthnRequest but it doesn't.
 
 There is a way however to tell the ADC not to set the subject at all (even though Azure should ignore it).  
 Putty in to the ADC and run the following command:

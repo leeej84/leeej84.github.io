@@ -11,7 +11,7 @@ The Web Filtering Policies on XG Firewalls are assigned to users based on them b
 
 Sophos have a small piece of software that deals with this and reports the correct information to the Firewall for the Web Filtering Policies for be applied correctly. This piece of software is called SATC.
 
-After configuring everything necessary in this [Sophos SATC Walkthrough](https://community.sophos.com/kb/en-us/127157) I still had nothing working. The logs look good, the firewall sees the user login and its recorded but then any subsequent web request dont contain the user details.
+After configuring everything necessary in this [Sophos SATC Walkthrough](https://community.sophos.com/kb/en-us/127157){:target="_blank"} I still had nothing working. The logs look good, the firewall sees the user login and its recorded but then any subsequent web request dont contain the user details.
 
 After lengthly calls with Sophos and getting nowhere, I finally posted on Twitter. A quick response from Sophos prompted an arrangement for another call. Okay.....
 
@@ -35,18 +35,15 @@ The setting in Chrome for the flag _chrome://flags/#network-service-in-process_Â
 
 The get SATC to work correctly this needs to be enabled. The kicker! There is no way to enable this through the registry or through GPOs. I did this.
 
-\[cc lang="text"\]GPP - Registry\[/cc\]
+{% highlight powershell %}
+GPP - Registry
+HKEY\_CLASSES_ROOT\ChromeHTML\shell\open\command\
+Default - REG_SZ
+"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --enable-features=NetworkServiceInProcess "%1"
 
-\[cc\]HKEY\_CLASSES\_ROOT\\ChromeHTML\\shell\\open\\command\[/cc\]
-
-\[cc\]Default - REG\_SZ\[/cc\]
-
-\[cc\]"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe" --enable-features=NetworkServiceInProcess "%1"\[/cc\]
-
-\[cc lang="text"\]GPP - Shortcut:\[/cc\]
-
-\[cc\]"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe" --enable-features=NetworkServiceInProcess\[/cc\]
-
+GPP - Shortcut:
+"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --enable-features=NetworkServiceInProcess
+{% endhighlight %}
 This bascially ensures that all shortcuts enable this flag when being run and also any links that kick off a chrome instance internally also enable the flag on launch.
 
 I really hope this helps someone resolve this much more quickly.

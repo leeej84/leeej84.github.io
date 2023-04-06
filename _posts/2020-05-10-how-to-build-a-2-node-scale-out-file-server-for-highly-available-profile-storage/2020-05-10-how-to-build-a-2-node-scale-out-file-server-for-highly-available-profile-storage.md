@@ -227,7 +227,7 @@ Give the drive a letter.
 
 I am using ReFS for this volume, VHD operations are much faster with ReFS due to the metadata operations instead of block allocation.
 
-Read more here: [https://www.itprotoday.com/windows-8/refs-benefits-vhd](https://www.itprotoday.com/windows-8/refs-benefits-vhd)
+Read more here: [https://www.itprotoday.com/windows-8/refs-benefits-vhd](https://www.itprotoday.com/windows-8/refs-benefits-vhd){:target="_blank"}
 
 ![](images/051020_1600_Howtobuilda46.png)
 
@@ -293,13 +293,13 @@ Set your permissions as required for your environment.
 You should now see your share available. Browse to it to ensure you can see it.
 
 **PowerShell:**
-
+{% highlight powershell %}
 Add-ClusterScaleOutFileServerRole -Name MSSOFS\_UPD
 
 New-Item -Path C:\\ClusterStorage\\$($volume.FileSystemLabel)\\Share -ItemType Directory
 
 New-SmbShare -Name Share -Path C:\\ClusterStorage\\$($volume.FileSystemLabel)\\Share
-
+{% endhighlight %}
 Summary:
 
 You now have a scale-out-file-server spreading the load of all access across the two VM's and being kept in sync using storage spaces direct. This can be used for any profile disk solution.

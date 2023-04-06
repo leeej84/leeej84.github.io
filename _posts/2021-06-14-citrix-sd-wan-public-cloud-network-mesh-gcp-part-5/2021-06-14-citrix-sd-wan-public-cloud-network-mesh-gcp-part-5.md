@@ -6,13 +6,13 @@ categories:
   - "sd-wan"
 ---
 
-- [Citrix SDWAN – Public Cloud Network Mesh – Introduction (Part 1)](https://www.leeejeffries.com/citrix-sdwan-public-cloud-network-mesh-introduction-part-1/)
-- [Citrix SD-WAN – Public Cloud Network Mesh – Master Control Node (Part 2)](https://www.leeejeffries.com/citrix-sd-wan-public-cloud-network-mesh-master-control-node-part-2/)
-- [Citrix SD-WAN – Public Cloud Network Mesh – Azure (Part 3)](https://www.leeejeffries.com/citrix-sd-wan-public-cloud-network-mesh-azure-part-3/)
-- [Citrix SD-WAN – Public Cloud Network Mesh – AWS (Part 4)](https://www.leeejeffries.com/citrix-sd-wan-public-cloud-network-mesh-aws-part-4/)
-- [Citrix SDWAN – Public Cloud Network Mesh – Creating a Full Mesh (Part 6)](https://www.leeejeffries.com/citrix-sdwan-public-cloud-network-mesh-creating-a-full-mesh-part-6/)
+- [Citrix SDWAN – Public Cloud Network Mesh – Introduction (Part 1)]({% post_url 2021-01-31-citrix-sdwan-public-cloud-network-mesh-introduction-part-1/2021-01-31-citrix-sdwan-public-cloud-network-mesh-introduction-part-1 %})
+- [Citrix SD-WAN – Public Cloud Network Mesh – Master Control Node (Part 2)]({% post_url 2021-02-08-citrix-sd-wan-public-cloud-network-mesh-master-control-node-part-2/2021-02-08-citrix-sd-wan-public-cloud-network-mesh-master-control-node-part-2 %})
+- [Citrix SD-WAN – Public Cloud Network Mesh – Azure (Part 3)]({% post_url 2021-04-05-citrix-sd-wan-public-cloud-network-mesh-azure-part-3/2021-04-05-citrix-sd-wan-public-cloud-network-mesh-azure-part-3 %})
+- [Citrix SD-WAN – Public Cloud Network Mesh – AWS (Part 4)]({% post_url 2021-06-09-citrix-sd-wan-public-cloud-network-mesh-aws-part-4/2021-06-09-citrix-sd-wan-public-cloud-network-mesh-aws-part-4 %})
+- [Citrix SDWAN – Public Cloud Network Mesh – Creating a Full Mesh (Part 6)]({% post_url 2021-06-15-citrix-sdwan-public-cloud-network-mesh-creating-a-full-mesh-part-6/2021-06-15-citrix-sdwan-public-cloud-network-mesh-creating-a-full-mesh-part-6 %})
 
-This post will follow on from the previous post; I already created the [Master Control Node on-prem](https://www.leeejeffries.com/citrix-sd-wan-public-cloud-network-mesh-master-control-node-part-2/). If you've not yet set up the Master Control node, you will need to do this first.
+This post will follow on from the previous post; I already created the [Master Control Node on-prem]({% post_url 2021-02-08-citrix-sd-wan-public-cloud-network-mesh-master-control-node-part-2/2021-02-08-citrix-sd-wan-public-cloud-network-mesh-master-control-node-part-2 %}). If you've not yet set up the Master Control node, you will need to do this first.
 
 Below is a diagram that shows the current progress of this blog series.
 

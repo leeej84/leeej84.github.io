@@ -8,7 +8,7 @@ date: "2020-10-04"
 PowerScale 2.8 has just been released. Its a community tool that I maintain to allow people running in hybrid cloud scenarios to power manage machines and keep costs down. Many options within this script makes it both flexible and adaptable to most environments.
 
 I'll be presenting on a Webinar on the 23rd October to go over the tool's usage and it's features.  
-[Check out the link and join us.](https://www.mycugc.org/events/event-description?CalendarEventKey=b1cce94a-3bd3-4ba4-a062-3e29ba9920d6&Home=%2fevents%2fcalendar)
+[Check out the link and join us.](https://www.mycugc.org/events/event-description?CalendarEventKey=b1cce94a-3bd3-4ba4-a062-3e29ba9920d6&Home=%2fevents%2fcalendar){:target="_blank"}
 
 More information about PowerScale generally can be found below and on the github page.
 
@@ -31,7 +31,7 @@ There was a Webinar last year which went over the configuration and demonstratio
 As always, please let me know if you get this installed and then require any help. There is a slack channel right here or issue on GitHub.
 
 Release:  
-[https://github.com/leeej84/PowerScale/releases/tag/2.8](https://github.com/leeej84/PowerScale/releases/tag/2.8)
+[https://github.com/leeej84/PowerScale/releases/tag/2.8](https://github.com/leeej84/PowerScale/releases/tag/2.8){:target="_blank"}
 
 Slack:  
-[https://worldofeuc.slack.com/messages/CLCSCA8LR](https://worldofeuc.slack.com/messages/CLCSCA8LR)
+[https://worldofeuc.slack.com/messages/CLCSCA8LR](https://worldofeuc.slack.com/messages/CLCSCA8LR){:target="_blank"}

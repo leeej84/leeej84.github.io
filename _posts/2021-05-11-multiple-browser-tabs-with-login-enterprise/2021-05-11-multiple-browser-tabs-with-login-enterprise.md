@@ -28,6 +28,6 @@ All you need to do to use these applications is to import them into your Login E
 
 Instead of listing the code directly here I have uploaded these to a Github repository:
 
-[leeej84/Login-Enterprise-Applications: Login Enterprise Applications and Functions (github.com)](https://github.com/leeej84/Login-Enterprise-Applications)
+[leeej84/Login-Enterprise-Applications: Login Enterprise Applications and Functions (github.com)](https://github.com/leeej84/Login-Enterprise-Applications){:target="_blank"}
 
 If you're using this tool to simulate load, I'm about to finish an IOPS generator for a user with the idea of replicating IOPs at a point in time for a user.

@@ -10,11 +10,11 @@ categories:
 
 So far in this series, we've set up the following:
 
-- [Introduction of SD-WAN and overview of the series](https://www.leeejeffries.com/citrix-sdwan-public-cloud-network-mesh-introduction-part-1/)
-- [Master Control Node (MCN) – On-Prem](https://www.leeejeffries.com/citrix-sd-wan-public-cloud-network-mesh-master-control-node-part-2/)
-- [SD-WAN appliance in Azure](https://www.leeejeffries.com/citrix-sd-wan-public-cloud-network-mesh-azure-part-3/)
-- [SD-WAN appliance in AWS](https://www.leeejeffries.com/citrix-sd-wan-public-cloud-network-mesh-aws-part-4/)
-- [SD-WAN appliance in GCP](https://www.leeejeffries.com/citrix-sd-wan-public-cloud-network-mesh-gcp-part-5/)
+- [Citrix SDWAN – Public Cloud Network Mesh – Introduction (Part 1)]({% post_url 2021-01-31-citrix-sdwan-public-cloud-network-mesh-introduction-part-1/2021-01-31-citrix-sdwan-public-cloud-network-mesh-introduction-part-1 %})
+- [Citrix SD-WAN – Public Cloud Network Mesh – Master Control Node (Part 2)]({% post_url 2021-02-08-citrix-sd-wan-public-cloud-network-mesh-master-control-node-part-2/2021-02-08-citrix-sd-wan-public-cloud-network-mesh-master-control-node-part-2 %})
+- [Citrix SD-WAN – Public Cloud Network Mesh – Azure (Part 3)]({% post_url 2021-04-05-citrix-sd-wan-public-cloud-network-mesh-azure-part-3/2021-04-05-citrix-sd-wan-public-cloud-network-mesh-azure-part-3 %})
+- [Citrix SD-WAN – Public Cloud Network Mesh – AWS (Part 4)]({% post_url 2021-06-09-citrix-sd-wan-public-cloud-network-mesh-aws-part-4/2021-06-09-citrix-sd-wan-public-cloud-network-mesh-aws-part-4 %})
+- [Citrix SD-WAN – Public Cloud Network Mesh – GCP (Part 5)]({% post_url 2021-06-14-citrix-sd-wan-public-cloud-network-mesh-gcp-part-5/2021-06-14-citrix-sd-wan-public-cloud-network-mesh-gcp-part-5 %})
 
 These appliances have provided connectivity to my on-prem environment and allowed me to utilise my existing infrastructure and branch out my network. In addition, the flexibility to be able to add cloud services to your current lab setup is pretty great.
 

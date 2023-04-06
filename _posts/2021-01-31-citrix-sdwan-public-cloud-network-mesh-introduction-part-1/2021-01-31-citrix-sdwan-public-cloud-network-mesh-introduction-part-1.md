@@ -7,11 +7,11 @@ categories:
 
 This series is a 6 part series all about SD-WAN and meshing cloud providers:
 
-- [Citrix SD-WAN – Public Cloud Network Mesh – Master Control Node (Part 2)](https://www.leeejeffries.com/citrix-sd-wan-public-cloud-network-mesh-master-control-node-part-2/)
-- [Citrix SD-WAN – Public Cloud Network Mesh – Azure (Part 3)](https://www.leeejeffries.com/citrix-sd-wan-public-cloud-network-mesh-azure-part-3/)
-- [Citrix SD-WAN – Public Cloud Network Mesh – AWS (Part 4)](https://www.leeejeffries.com/citrix-sd-wan-public-cloud-network-mesh-aws-part-4/)
-- [Citrix SD-WAN – Public Cloud Network Mesh – GCP (Part 5)](https://www.leeejeffries.com/citrix-sd-wan-public-cloud-network-mesh-gcp-part-5/)
-- [Citrix SDWAN – Public Cloud Network Mesh – Creating a Full Mesh (Part 6)](https://www.leeejeffries.com/citrix-sdwan-public-cloud-network-mesh-creating-a-full-mesh-part-6/)
+- [Citrix SD-WAN – Public Cloud Network Mesh – Master Control Node (Part 2)]({% post_url 2021-02-08-citrix-sd-wan-public-cloud-network-mesh-master-control-node-part-2/2021-02-08-citrix-sd-wan-public-cloud-network-mesh-master-control-node-part-2 %})
+- [Citrix SD-WAN – Public Cloud Network Mesh – Azure (Part 3)]({% post_url 2021-04-05-citrix-sd-wan-public-cloud-network-mesh-azure-part-3/2021-04-05-citrix-sd-wan-public-cloud-network-mesh-azure-part-3 %})
+- [Citrix SD-WAN – Public Cloud Network Mesh – AWS (Part 4)]({% post_url 2021-06-09-citrix-sd-wan-public-cloud-network-mesh-aws-part-4/2021-06-09-citrix-sd-wan-public-cloud-network-mesh-aws-part-4 %})
+- [Citrix SD-WAN – Public Cloud Network Mesh – GCP (Part 5)]({% post_url 2021-06-14-citrix-sd-wan-public-cloud-network-mesh-gcp-part-5/2021-06-14-citrix-sd-wan-public-cloud-network-mesh-gcp-part-5 %})
+- [Citrix SDWAN – Public Cloud Network Mesh – Creating a Full Mesh (Part 6)]({% post_url 2021-06-15-citrix-sdwan-public-cloud-network-mesh-creating-a-full-mesh-part-6/2021-06-15-citrix-sdwan-public-cloud-network-mesh-creating-a-full-mesh-part-6 %})
 
 Let's talk about this term that's mentioned regularly; SDWAN. This stands for Software-Defined Wide Area Networking, okay great; what is it though?
 

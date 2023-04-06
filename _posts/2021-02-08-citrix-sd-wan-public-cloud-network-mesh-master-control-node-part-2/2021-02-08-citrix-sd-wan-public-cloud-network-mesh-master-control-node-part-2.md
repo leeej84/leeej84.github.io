@@ -5,15 +5,15 @@ categories:
   - "citrix"
 ---
 
-- [Citrix SDWAN – Public Cloud Network Mesh – Introduction (Part 1)](https://www.leeejeffries.com/citrix-sdwan-public-cloud-network-mesh-introduction-part-1/)
-- [Citrix SD-WAN – Public Cloud Network Mesh – Azure (Part 3)](https://www.leeejeffries.com/citrix-sd-wan-public-cloud-network-mesh-azure-part-3/)
-- [Citrix SD-WAN – Public Cloud Network Mesh – AWS (Part 4)](https://www.leeejeffries.com/citrix-sd-wan-public-cloud-network-mesh-aws-part-4/)
-- [Citrix SD-WAN – Public Cloud Network Mesh – GCP (Part 5)](https://www.leeejeffries.com/citrix-sd-wan-public-cloud-network-mesh-gcp-part-5/)
-- [Citrix SDWAN – Public Cloud Network Mesh – Creating a Full Mesh (Part 6)](https://www.leeejeffries.com/citrix-sdwan-public-cloud-network-mesh-creating-a-full-mesh-part-6/)
+- [Citrix SDWAN – Public Cloud Network Mesh – Introduction (Part 1)]({% post_url 2021-01-31-citrix-sdwan-public-cloud-network-mesh-introduction-part-1/2021-01-31-citrix-sdwan-public-cloud-network-mesh-introduction-part-1 %})
+- [Citrix SD-WAN – Public Cloud Network Mesh – Azure (Part 3)]({% post_url 2021-04-05-citrix-sd-wan-public-cloud-network-mesh-azure-part-3/2021-04-05-citrix-sd-wan-public-cloud-network-mesh-azure-part-3 %})
+- [Citrix SD-WAN – Public Cloud Network Mesh – AWS (Part 4)]({% post_url 2021-06-09-citrix-sd-wan-public-cloud-network-mesh-aws-part-4/2021-06-09-citrix-sd-wan-public-cloud-network-mesh-aws-part-4 %})
+- [Citrix SD-WAN – Public Cloud Network Mesh – GCP (Part 5)]({% post_url 2021-06-14-citrix-sd-wan-public-cloud-network-mesh-gcp-part-5/2021-06-14-citrix-sd-wan-public-cloud-network-mesh-gcp-part-5 %})
+- [Citrix SDWAN – Public Cloud Network Mesh – Creating a Full Mesh (Part 6)]({% post_url 2021-06-15-citrix-sdwan-public-cloud-network-mesh-creating-a-full-mesh-part-6/2021-06-15-citrix-sdwan-public-cloud-network-mesh-creating-a-full-mesh-part-6 %})
 
-I provided an intro to this blog series in my last post; you can find this [here](mailto:https://www.leeejeffries.com/citrix-sdwan-public-cloud-network-mesh-introduction-part-1/) if you need a refresher on all these steps' overall outcome.
+I provided an intro to this blog series in my last post; you can find this [here]({% post_url 2021-01-31-citrix-sdwan-public-cloud-network-mesh-introduction-part-1/2021-01-31-citrix-sdwan-public-cloud-network-mesh-introduction-part-1 %}) if you need a refresher on all these steps' overall outcome.
 
-If you don't want to play around with the public cloud side of things but still want to get stuck into SD-WAN, there is a full lab blog [here – Getting Started with Citrix SD-WAN](https://www.leeejeffries.com/getting-started-with-citrix-sdwan/).
+If you don't want to play around with the public cloud side of things but still want to get stuck into SD-WAN, there is a full lab blog [here – Getting Started with Citrix SD-WAN]({% post_url 2018-07-19-getting-started-with-citrix-sdwan/2018-07-19-getting-started-with-citrix-sdwan %}).
 
 What we're doing here is setting up the MCN (Master Control Node) for SD-WAN. Your first step whenever you are deploying a Citrix SD-WAN solution. This node will become your configuration editor; these configurations get installed on each remote SD-WAN appliance.
 
@@ -27,15 +27,16 @@ What about requirements for SD-WAN? What ports do we need to think about opening
 
 You will need port 4980 NAT'ed from your Firewall to your SD-WAN Appliance WAN IP as an absolute minimum.
 
-There are ports for other SD-WAN areas, including Zero Touch deployment, a full list of ports can be found [here](https://docs.citrix.com/en-us/tech-zone/build/tech-papers/citrix-communication-ports.html); scroll to the Citrix SD-WAN section.
+There are ports for other SD-WAN areas, including Zero Touch deployment, a full list of ports can be found [here](https://docs.citrix.com/en-us/tech-zone/build/tech-papers/citrix-communication-ports.html){:target="_blank"}; scroll to the Citrix SD-WAN section.
 
 Your Virtual Machine specification should be a four core virtual machine with 4GB memory and 120GB of disk space.
 
-The only other requirement is that you have a license for the appliance. [Check out all available options](https://docs.citrix.com/en-us/citrix-sd-wan/11/sd-wan-licensing.html) or contact sales / your partner for a demo license.
+The only other requirement is that you have a license for the appliance. [Check out all available options](https://docs.citrix.com/en-us/citrix-sd-wan/11/sd-wan-licensing.html){:target="_blank"}
+ or contact sales / your partner for a demo license.
 
 Head on over and download the latest **11.3.2** edition of the appliance here: **I had some issues with the latest 11.3 release half way through pulling this together. I'm working with Citrix on addressing the issues.**
 
-[https://www.citrix.com/en-gb/downloads/citrix-sd-wan/citrix-sd-wan-standard-premium-advance-edition/](https://www.citrix.com/en-gb/downloads/citrix-sd-wan/citrix-sd-wan-standard-premium-advance-edition/)
+[https://www.citrix.com/en-gb/downloads/citrix-sd-wan/citrix-sd-wan-standard-premium-advance-edition/](https://www.citrix.com/en-gb/downloads/citrix-sd-wan/citrix-sd-wan-standard-premium-advance-edition/){:target="_blank"}
 
 **Also, grab the appliance firmware for the VPX and the VPX-L versions of the appliance, we will need those later on and this will save time.**
 

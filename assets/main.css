@@ -28,6 +28,7 @@ li {
 a {
   text-decoration: none;
   color: #332c82;
+  font-weight: bold;
 }
 
 a:hover,

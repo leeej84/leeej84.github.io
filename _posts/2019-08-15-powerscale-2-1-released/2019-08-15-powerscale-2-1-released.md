@@ -5,7 +5,7 @@ date: "2019-08-15"
 
 [![](images/053019_2115_CommunityPr1.jpg)](https://github.com/leeej84/PowerScale/releases/tag/2.1)
 
-I've recently finished working on the latest release of PowerScale with some really large changes that were requested during the Webinar last week. If you didn't catch it please head over to CUCG and take a look at the [webinar recording](https://www.mycugc.org/viewdocument/user-share-08-08-19-bye-smartsca?CommunityKey=985b2901-30d5-47f8-a86d-5972ee9942ea&tab=librarydocuments). We covered alot of config and setup as well as advanced configuration options and a general overview of what the script does.
+I've recently finished working on the latest release of PowerScale with some really large changes that were requested during the Webinar last week. If you didn't catch it please head over to CUCG and take a look at the [webinar recording](https://www.mycugc.org/viewdocument/user-share-08-08-19-bye-smartsca?CommunityKey=985b2901-30d5-47f8-a86d-5972ee9942ea&tab=librarydocuments){:target="_blank"}. We covered alot of config and setup as well as advanced configuration options and a general overview of what the script does.
 
 Anyway, I've been working hard and have managed to pull alot into this release. The lastest features:
 
@@ -39,8 +39,8 @@ The addition of RunSpaces has been a complete game changer, the script runs much
 
 ![](images/RDTabs_IMURKMZWwa-1024x486.png)
 
-I want to thank Guy Leech - [@guyrleech](https://twitter.com/guyrleech) for the pointers on RunSpaces, he helped me see the method in my madness after I stared at RunSpaces for about a day.
+I want to thank Guy Leech - [@guyrleech](https://twitter.com/guyrleech){:target="_blank"} for the pointers on RunSpaces, he helped me see the method in my madness after I stared at RunSpaces for about a day.
 
 We've moved the chat over to the Slack workspace - come and join us there.
 
-[https://worldofeuc.slack.com/messages/CLCSCA8LR](https://worldofeuc.slack.com/messages/CLCSCA8LR)
+[https://worldofeuc.slack.com/messages/CLCSCA8LR](https://worldofeuc.slack.com/messages/CLCSCA8LR){:target="_blank"}

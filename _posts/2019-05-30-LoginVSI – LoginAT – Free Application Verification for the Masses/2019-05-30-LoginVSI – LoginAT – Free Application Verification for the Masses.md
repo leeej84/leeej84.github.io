@@ -23,13 +23,13 @@ Let's dive a little deeper and take a look.
 
 Grab the Virtual Appliance package from the LoginVSI website here:
 
-[https://www.loginvsi.com/downloads](https://www.loginvsi.com/downloads)
+[https://www.loginvsi.com/downloads](https://www.loginvsi.com/downloads){:target="_blank"}
 
 Import the Appliance:
 
 ![](images/080719_1617_LoginVSILog3.png)
 
-The prompts are all straigh forward so follow those through. More detail can be found [here](https://support.loginvsi.com/hc/en-us/articles/360004060880-Deploy-OVA-Template-on-Citrix-XenServer)
+The prompts are all straigh forward so follow those through. More detail can be found [here](https://support.loginvsi.com/hc/en-us/articles/360004060880-Deploy-OVA-Template-on-Citrix-XenServer){:target="_blank"}
 
 Once imported, start the appliance, you'll be prompted to login, use admin and admin as credentials.
 
@@ -136,4 +136,4 @@ Thanks for reading as always, please feel free to ask any questions on Twitter, 
 
 ![](images/080719_1617_LoginVSILog21.png)
 
-[https://www.loginvsi.com/968-login-at-express-application-compatibility#a](https://www.loginvsi.com/968-login-at-express-application-compatibility#a)
+[https://www.loginvsi.com/968-login-at-express-application-compatibility#a](https://www.loginvsi.com/968-login-at-express-application-compatibility#a){:target="_blank"}

@@ -7,8 +7,8 @@ date: "2020-11-04"
 
 \-----------------------------------UPDATE 05.11.20-----------------------------------
 
-Upon posting this blog on twitter I was greeted with a number of responses where people had found different solutions to this issue. A thank you [Rob Sheppard](https://twitter.com/RobSheppard) for this GPO entry that solves this issue also.  
-Location: Computer Configuration\\Administrative Templates\\Windows Components\\File Explorer  
+Upon posting this blog on twitter I was greeted with a number of responses where people had found different solutions to this issue. A thank you [Rob Sheppard](https://twitter.com/RobSheppard){:target="_blank"} for this GPO entry that solves this issue also.  
+Location: Computer Configuration\Administrative Templates\Windows Components\File Explorer  
 Setting: Do not show the 'new application installed' notification
 
 ![](images/image-1024x745.png)
@@ -17,7 +17,9 @@ Setting: Do not show the 'new application installed' notification
 
 So you've installed your shiny new Win10 machine, and you've configured your default app file associations by logging in as a user and using
 
-\[cc\]Dism /Online /Export-DefaultAppAssociations:""\[/cc\]
+{% highlight powershell %}
+Dism /Online /Export-DefaultAppAssociations:""
+{% endhighlight %}
 
 and then settings it via GPO as per the below.
 
@@ -31,11 +33,16 @@ Edge, that's what gives, specifically modern app hooks. I had an image whereby I
 
 I kept seeing this each time I launched a PDF, no matter what I did. I checked and double-checked my XML file to make sure it was right. This is how I got around it.
 
-\[cc\] Windows Registry Editor Version 5.00 \[HKEY\_CURRENT\_USER\\SOFTWARE\\Classes\\AppXd4nrz8ff68srnhf9t5a8sbjyar1cr723\] "NoOpenWith"="" "NoStaticDefaultVerb"="" \[/cc\]
+{% highlight powershell%}
+Windows Registry Editor Version 5.00 
+[HKEY_CURRENT_USER\SOFTWARE\Classes\AppXd4nrz8ff68srnhf9t5a8sbjyar1cr723] 
+"NoOpenWith"="" 
+"NoStaticDefaultVerb"=""
+{% endhighlight %}
 
 Implement the above registry settings via your preferred method. This will tell Edge to stop trying to grab file associations for PDF files.
 
-Thanks to [Andy Martin](https://twitter.com/MartinAndyAm) for the assist in finding this [article](https://www.winhelponline.com/blog/windows-10-resetting-file-associations/) that explains the situation fully. There are also several other modern apps that can exhibit this behaviour; this is all specified in the article.
+Thanks to [Andy Martin](https://twitter.com/MartinAndyAm){:target="_blank"} for the assist in finding this [article](https://www.winhelponline.com/blog/windows-10-resetting-file-associations/){:target="_blank"} that explains the situation fully. There are also several other modern apps that can exhibit this behaviour; this is all specified in the article.
 
 On top of this, Adobe Reader will then warn you that it doesn't necessarily own all PDF file associations. You can disable this prompt by implementing the below registry setting.
 

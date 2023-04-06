@@ -92,11 +92,11 @@ The lab machines power on automatically and launch ESXi, VCenter is setup to pow
 
 ## The Parts List:
 
-- [Flight Case](https://selloscope.com/item/Aluminium-Flight-Case-460x330x150mm/B0-0C-BF-VO-FM)
-- [Electric Socket](https://www.towsure.com/berker-13a-250v-socket-anthracite?gclid=CjwKCAiA66_xBRBhEiwAhrMuLRB8HR6vBjOHFp7Ca_GpcGKtEfACMzym7yQdd8h51a5pQCHY_dvRyBoCWK0QAvD_BwE)
-    - [Backing Box](https://www.towsure.com/berker-single-backing-box)
-- [Cooling Fans](https://www.amazon.co.uk/gp/product/B005QRMAJG/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)
-- [Lenovo Units](https://www.lenovo.com/gb/en/desktops-and-all-in-ones/thinkcentre/m-series-tiny/ThinkCentre-M720q/p/10T700A8UK)
-- [NetGear Switch](https://www.netgear.com/support/product/GS116Ev2.aspx)
-- [TP-Link WR1043ND (Newer Model)](https://www.tp-link.com/uk/home-networking/wifi-router/tl-wr1043nd/#qrcode)
-- [YoYo Router](https://www.yoyomotion.com/Filer/YOYOCam3G/YOYORouter/YOYORouter_EE1_product_flyer_eng.pdf)
+- [Flight Case](https://selloscope.com/item/Aluminium-Flight-Case-460x330x150mm/B0-0C-BF-VO-FM){:target="_blank"}
+- [Electric Socket](https://www.towsure.com/berker-13a-250v-socket-anthracite?gclid=CjwKCAiA66_xBRBhEiwAhrMuLRB8HR6vBjOHFp7Ca_GpcGKtEfACMzym7yQdd8h51a5pQCHY_dvRyBoCWK0QAvD_BwE){:target="_blank"}
+    - [Backing Box](https://www.towsure.com/berker-single-backing-box){:target="_blank"}
+- [Cooling Fans](https://www.amazon.co.uk/gp/product/B005QRMAJG/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1){:target="_blank"}
+- [Lenovo Units](https://www.lenovo.com/gb/en/desktops-and-all-in-ones/thinkcentre/m-series-tiny/ThinkCentre-M720q/p/10T700A8UK){:target="_blank"}
+- [NetGear Switch](https://www.netgear.com/support/product/GS116Ev2.aspx){:target="_blank"}
+- [TP-Link WR1043ND (Newer Model)](https://www.tp-link.com/uk/home-networking/wifi-router/tl-wr1043nd/#qrcode){:target="_blank"}
+- [YoYo Router](https://www.yoyomotion.com/Filer/YOYOCam3G/YOYORouter/YOYORouter_EE1_product_flyer_eng.pdf){:target="_blank"}

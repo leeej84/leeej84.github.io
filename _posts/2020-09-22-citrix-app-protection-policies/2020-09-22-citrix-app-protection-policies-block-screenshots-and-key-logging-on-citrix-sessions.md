@@ -38,7 +38,7 @@ Assuming you have these things, we can get cracking.
     
     - I won't cover doing this as its well documented on how to install licenses
         
-        - [https://docs.citrix.com/en-us/licensing/licensing-guide-for-citrix-virtual-apps-desktops.html](https://docs.citrix.com/en-us/licensing/licensing-guide-for-citrix-virtual-apps-desktops.html)
+        - [https://docs.citrix.com/en-us/licensing/licensing-guide-for-citrix-virtual-apps-desktops.html](https://docs.citrix.com/en-us/licensing/licensing-guide-for-citrix-virtual-apps-desktops.html){:target="_blank"}
     - Download the Feature Table XML file from Citrix Downloads
         
         ![](images/092220_1608_CitrixAppPr3.png)
@@ -48,26 +48,26 @@ Assuming you have these things, we can get cracking.
         - Open PowerShell on your delivery controller
         - Run the following code:
             
-            - Import-Module Citrix\*
-            - Import-ConfigFeatureTable –Path **_<Path to your Feature Table XML>_**
+            - **Import-Module Citrix\***
+            - **Import-ConfigFeatureTable –Path **_\<Path to your Feature Table XML>_\*\***
         - Now enable App Protection on your Delivery Groups
             
-            - Get-BrokerDesktopGroup -Name **<_Name of Delivery Group>_** | Set-BrokerDesktopGroup -AppProtectionKeyLoggingRequired $true -AppProtectionScreenCaptureRequired $true
+            - **Get-BrokerDesktopGroup -Name \*\*\<_Name of Delivery Group>_\*\* | Set-BrokerDesktopGroup -AppProtectionKeyLoggingRequired $true -AppProtectionScreenCaptureRequired $true**
             - **Warning: When I enabled this, my desktops stopped working on the web UI totally. Best to publish particular Apps as duplicates for app protection.**
     - Lastly – Create a package for the Citrix Workspace App
         
         - You need to specify the installation command line as follows
             
-            - CitrixWorkspaceApp.exe /includeappprotection
+            - **CitrixWorkspaceApp.exe /includeappprotection**
         - This is as a minimum. You may want to do more and create a custom package to deploy to your users, you can customize the Receiver installation through command line using a tool:
             
-            - [https://support.citrix.com/article/CTX227370](https://support.citrix.com/article/CTX227370)
+            - [https://support.citrix.com/article/CTX227370](https://support.citrix.com/article/CTX227370){:target="_blank"}
             - An example string could be as follows:
                 
-                - CitrixWorkspaceApp.exe /noreboot /rcu /forceinstall EnableCEIP=false /includeappprotection STORE0="AG;https://lab.leeejeffries.com#Store;On;External" STORE1="Local;https://storefront.ctxlab.local/Citrix/Store/discovery;On;Internal"
+                - **CitrixWorkspaceApp.exe /noreboot /rcu /forceinstall EnableCEIP=false /includeappprotection STORE0="AG;https://lab.leeejeffries.com#Store;On;External" STORE1="Local;https://storefront.ctxlab.local/Citrix/Store/discovery;On;Internal"**
             - If you wrap this, you can deploy the client directly to external endpoints.
                 
-                - An excellent tool for wrapping executables: [https://www.masterpackager.com/blog/when-and-why-should-you-repackage-an-exe-to-an-msi](https://www.masterpackager.com/blog/when-and-why-should-you-repackage-an-exe-to-an-msi)
+                - An excellent tool for wrapping executables: [https://www.masterpackager.com/blog/when-and-why-should-you-repackage-an-exe-to-an-msi](https://www.masterpackager.com/blog/when-and-why-should-you-repackage-an-exe-to-an-msi){:target="_blank"}
 
 You should now be in a place where you can configure the Workspace App to connect to Storefront and then attempt a screenshot. You should see the workspace app black the screen out and adjust.
 

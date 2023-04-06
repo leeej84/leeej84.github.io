@@ -104,10 +104,10 @@ The following parameters must be set in the scripts in order for it to all funct
 
 You can download the script pack here.
 
-[https://www.leeejeffries.com/wp-content/uploads/2019/10/LVSI\_Load\_Testing.zip](https://www.leeejeffries.com/wp-content/uploads/2019/10/LVSI_Load_Testing-1.zip)
+[LVSI_Load_Testing.zip](https://leeejeffries-my.sharepoint.com/:u:/p/leee_jeffries/EeZwXajNFnlDkPuoPE0rdOcBSO9yZvnb8ib66yOO_i0rUA?e=mwDB2v){:target="_blank"}
 
 **References**:
 
-Daniel Feller - [https://virtualfeller.com/powershell/](https://virtualfeller.com/powershell/)
+Daniel Feller - [https://virtualfeller.com/powershell/](https://virtualfeller.com/powershell/){:target="_blank"}
 
-Logit Blog - [https://www.logitblog.com/capturing-citrix-xenserver-performance-data-with-powersh](https://www.logitblog.com/capturing-citrix-xenserver-performance-data-with-powershell/)[ell/](https://www.logitblog.com/capturing-citrix-xenserver-performance-data-with-powershell/)
+Logit Blog - [https://www.logitblog.com/capturing-citrix-xenserver-performance-data-with-powersh](https://www.logitblog.com/capturing-citrix-xenserver-performance-data-with-powershell/)[ell/](https://www.logitblog.com/capturing-citrix-xenserver-performance-data-with-powershell/){:target="_blank"}
