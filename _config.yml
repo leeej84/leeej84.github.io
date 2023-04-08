@@ -73,6 +73,8 @@ defaults:
 collections:
   pages:
     output: true
+    permalink: /:title
+    permalink: /:title/
 
 # Exclude from processing.
 exclude:
