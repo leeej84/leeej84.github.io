@@ -1,6 +1,8 @@
 ---
 title: "How to build a 2-node scale-out-file-server for highly available profile storage"
 date: "2020-05-10"
+redirect-from
+- /How to build a 2-node scale-out-file-server for highly available profile storage/
 ---
 
 Many vendors have released profile disk solutions and since that time there has been a very large amount of people with queries about the kind of storage that's necessary in order to support user's profile disks. This blog post will aim to show you a potential solution in a scenario.
