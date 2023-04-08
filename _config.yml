@@ -55,7 +55,11 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-paginate
-permalink: /:title
+  - jekyll-redirect-from
+# permalink: /:title
+permalinks: 
+    title1: '/:title'
+    title2: '/:title/'
 
 defaults:
   - scope:
@@ -71,10 +75,6 @@ defaults:
 collections:
   pages:
     output: true
-    permalinks: 
-    title1: '/:title'
-    title2: '/:title/'
-
 
 # Exclude from processing.
 exclude:
