@@ -57,7 +57,6 @@ plugins:
   - jekyll-paginate
   - jekyll-redirect-from
 permalink: /:title
-permalink: /:title/
 
 defaults:
   - scope:
@@ -74,7 +73,6 @@ collections:
   pages:
     output: true
     permalink: /:title
-    permalink: /:title/
 
 # Exclude from processing.
 exclude:
