@@ -33,3 +33,4 @@ gem "jekyll-seo-tag"
 gem "google_analytics"
 gem "rouge"
 gem 'jekyll-twitter-plugin'
+gem 'jekyll-redirect-from'
