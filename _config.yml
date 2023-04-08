@@ -56,10 +56,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-redirect-from
-# permalink: /:title
-permalinks: 
-    title1: '/:title'
-    title2: '/:title/'
+permalink: /:title
 
 defaults:
   - scope:
