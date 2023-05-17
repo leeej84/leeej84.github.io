@@ -1,6 +1,6 @@
 ---
 title: "SMTP Properties will not load on server 2022 in IIS admin mmc snap-in"
-date: "2023-15-05"
+date: "2023-05-17"
 ---
 
 ![](images/mmc-error.png)
