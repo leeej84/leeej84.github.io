@@ -11,7 +11,7 @@ I have compromised a guide below which outlines to necessary steps in order to b
 
 The first think you will need to do is download the following zip file:
 
-[![](images/102517_1510_Reinstating1.png)](https://www.leeejeffries.com/wp-content/uploads/2017/10/Restore_Windows_Photo_Viewer.zip)
+[![](images/102517_1510_Reinstating1.png)](https://www.leeejeffries.com/assets/downloads/Restore_Windows_Photo_Viewer.zip)
 
 This contains the relevant .reg file to create the file associations for Windows Photo Viewer so that it appears in the list of programs within Windows.
 
