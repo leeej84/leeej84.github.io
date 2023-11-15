@@ -1,6 +1,7 @@
 ---
 title: "Checking prices for azure VMs with PowerShell"
 date: "2023-11-15"
+tags: azure
 ---
 
 ![pricingimage](images/price.png){:style="display:block; margin-left:auto; margin-right:auto"}
