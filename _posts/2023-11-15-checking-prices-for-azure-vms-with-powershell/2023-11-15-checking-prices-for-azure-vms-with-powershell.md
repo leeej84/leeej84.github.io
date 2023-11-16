@@ -1,7 +1,7 @@
 ---
 title: "Checking prices for azure VMs with PowerShell"
 date: "2023-11-15"
-tags: azure
+tags: azure, powershell
 ---
 
 ![pricingimage](images/price.png){:style="display:block; margin-left:auto; margin-right:auto"}
@@ -52,7 +52,8 @@ Function Get-AzureVMPrice {
         }
 
     } catch {
-        Write-Host "Error processing request, check the SKU and region are valid"
+        Write-Error "Error processing request, check the SKU and region are valid"
+        Write-Error $_
     }
 }
 
@@ -82,7 +83,8 @@ Function Get-AzureVMSKUs {
 
         Return $SKUs | Select-Object -Unique | Sort-Object
     } catch {
-        Write-Host "Error processing request, check the region and currency are valid"
+        Write-Error "Error processing request, check the region and currency are valid"
+        Write-Error $_
     }
 }
 {% endhighlight %}
