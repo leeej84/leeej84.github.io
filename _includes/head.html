@@ -20,7 +20,7 @@
     {%- seo -%}
     {%- feed_meta -%}
     <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
-    {% if jekyll.environment == 'production' and site.google_analytics %}
+    {% if site.google_analytics and jekyll.environment == 'production' %}
     {% include analytics.html %}
     {% endif %}
 </head>
