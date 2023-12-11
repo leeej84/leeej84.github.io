@@ -120,11 +120,29 @@ Navigate to "Scripts" in the left-hand navigation menu. You'll be presented with
 
 You can see here, I've already added a "Get-ComputerInfo" script, uploading is a simple process, attach your ps1 file, fill in details and your done. The sorts of information you need to populate are, description of the scripts, instructions on how to use it, parameters that are required. 
 
-**Note: Your script does need to be signed to work, even with a self-signed certificate is fine. If you need help doing this, you can generate a self-signed cert.**
+**Note: Your script does need to be signed to work, alternatively - you can allow unsigned scripts**
 
-Follow <a href="https://codesigningstore.com/how-to-create-self-signed-code-signing-certificate-with-powershell" target="_blank">this guide</a> to generate the certificate, install the certificate in your personal store and in "Trusted Root Certificate Authorities". You can then use the Set-AuthenticodeSignature command <a href="https://www.clickssl.net/blog/how-to-sign-a-powershell-script" target="_blank">like this</a> to sign your code before uploading.
+To allow unsigned scripts, navigate to "Tenant" in the left-hand side navigation menu. Select the "SITE" tab, you can then allow "Allow Agents to Hash Check if Script is Not Signed".
+
+![liquidware12](images/liquidware12.png){:style="width:100%;height=100%;"}
 
 Once you have uploaded a script you can run this on a Machine. All the results are stored for script runs, you can always go back to these results and review them.
+
+To execute a script, I'll navigate over to "Machines" using the left-hand navigation menu. Select the relevant machine, I've selected a VM in my lab. I'll select scripts from the top of the screen,
+
+![liquidware13](images/liquidware13.png){:style="width:100%;height=100%;"}
+
+You can now search for the script by starting to type the name.
+
+![liquidware14](images/liquidware14.png){:style="width:100%;height=100%;"}
+
+You simply select "Submit" to run the script.
+
+![liquidware15](images/liquidware15.png){:style="width:100%;height=100%;"}
+
+You can see the results of the script run.
+
+![liquidware16](images/liquidware16.png){:style="width:100%;height=100%;"}
 
 ### Summary
 CommandCTRL has some cool features, the ability to have this level of functionality without deploying any infrastructure and only deploying agents is a large benefit. I'm interested to see what features will be in the roadmap for the future.
