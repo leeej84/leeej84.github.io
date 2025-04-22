@@ -8,6 +8,35 @@
 
 }
 
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+    color: black;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-success {
+    background: rgb(28, 184, 65);
+    /* this is a green */
+}
+
+.button-error {
+    background: rgb(202, 60, 60);
+    /* this is a maroon */
+}
+
+.button-warning {
+    background: rgb(223, 117, 20);
+    /* this is an orange */
+}
+
+.button-secondary {
+    background: rgb(66, 184, 221);
+    /* this is a light blue */
+}
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -123,7 +152,7 @@ footer .pure-menu-link:hover {
 }
 
 .sidebar {
-  background: #222;
+  background: #FFF;
   color: #fff;
 }
 
@@ -140,14 +169,14 @@ footer .pure-menu-link:hover {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 40%;
 }
 
 .brand-title,
 .brand-tagline,
 .nav {
   margin: 0;
-  margin-right: -20px;
+  margin-right: 20px;
 }
 
 .brand-title-left,
@@ -163,12 +192,12 @@ footer .pure-menu-link:hover {
 }
 
 .brand-title a {
-  color: white;
+  color: #000;
 }
 
 .brand-tagline {
   font-weight: 300;
-  color: #ddd;
+  color: #000;
   font-size: 18px;
 }
 
@@ -379,7 +408,7 @@ footer .pure-menu-link:hover {
   }
 
   .post-entry {
-    width: 70%;
+    width: 100%;
   }
 
   .tags {
@@ -474,8 +503,7 @@ footer ul {
   font-size: 18px;
   font-weight: 600;
   padding: 7px 10px;
-  border-right: 1px grey solid;
-  margin-left: -4px;
+  margin-left: 4px;
   text-decoration: none;
   color: #333;
   margin-top: 10px;
@@ -536,11 +564,28 @@ footer ul {
 #search,
 .search_res p,
 #results-container {
+  position: relative;
+  z-index: 1;
+  float: none;
   font-family: 'tradegothic_ltregular' !important;
+  text-align: left !important;
+
+}
+/* Ensure the search wrapper allows absolute positioning inside it */
+#search {
+  position: relative;
+  z-index: 1; /* just enough to layer within normal content */
 }
 
+/* Float the results container absolutely and above other content */
 #results-container {
-  border: 1px solid black;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background-color: white; /* so content behind doesn't show through */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #search-input {
