@@ -22,7 +22,6 @@ title: "Leee Jeffries Blog"
 strapline: "LEEEJEFFRIES.COM"
 email: leee.jeffries@leeejeffries.com
 description: >- # this means to ignore newlines until "baseurl:"
-  A blog all about my experiences in EUC using all types of technologies, tips and tricks.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://leeejeffries.com" # the base hostname & protocol for your site, e.g. http://example.com
 repository: leeej84/leeejeffries.github.io
@@ -39,7 +38,7 @@ disqus: purelog-jekyll
 author: Leee Jeffries
 author_bio: >-
   I'm an IT professional with over 15 years of experience in the IT industry, I've worked in many fields in my career. This blog is to share my experience, tips and tricks.
-author_pic: assets/profile-sm.png
+author_pic: assets/Leee.jpg
 paginate: 4
 paginate_path: "/:num/"
 

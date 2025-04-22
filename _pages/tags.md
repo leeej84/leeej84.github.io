@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Organized by Tags
+title: Organised by Tags
 permalink: /tags/
 content-type: eg
 ---
