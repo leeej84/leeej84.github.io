@@ -47,6 +47,10 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+      start_line: 1
 
 # Build settings
 theme: null
@@ -78,3 +82,14 @@ exclude:
   - ".jekyll-cache"
   - "Gemfile"
   - "Gemfile.lock"
+  - "_posts/2019-02-25-protocol-wars-rdp-vs-ica/images/2019-01-16-20_36_34-Greenshot.png"
+  - "_posts/2019-02-25-protocol-wars-rdp-vs-ica/images/2019-02-25-22_28_54-Win16-TaskWorker-Network_Bandwidth-Test-1-of-1-on-VM-XDSH-01-2019-02-12-10--1024x487.png"
+  - "_posts/2019-02-25-protocol-wars-rdp-vs-ica/images/2019-02-25-22_28_54-Win16-TaskWorker-Network_Bandwidth-Test-1-of-1-on-VM-XDSH-01-2019-02-12-10-.png"
+  - "_posts/2020-01-25-lab-in-a-suitcase/images/2020-01-25-17_25_50-High-Level-Configuration.vsdx-Visio-Professional-1024x713.png"
+  - "_posts/2020-01-25-lab-in-a-suitcase/images/2020-01-25-17_25_50-High-Level-Configuration.vsdx-Visio-Professional.png"
+
+# Cache settings
+cache_dir: /tmp/jekyll-cache
+
+# Excerpt separator
+excerpt_separator: "<!--more-->"

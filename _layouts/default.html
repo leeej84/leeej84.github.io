@@ -3,23 +3,347 @@
 
 {%- include head.html -%}
 
-<body>
+<body class="bg-gradient-to-br from-orange-500 via-pink-500 to-blue-500 min-h-screen font-sans">
+                    <!-- Header Bar -->
+                  <header class="bg-gray-800/90 backdrop-blur-sm border-b-2 border-gradient-to-r from-orange-500 via-pink-500 to-blue-500 sticky top-0 z-50">
+                    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+                      <div class="flex items-center space-x-4 bg-gray-900/80 backdrop-blur-sm rounded-lg px-4 py-2">
+                        <h1 class="text-white font-bold text-xl">Leee Jeffries</h1>
+                        <span class="text-gray-300 text-sm">IT Professional & Blogger</span>
+                      </div>
+                                            <div class="flex items-center space-x-4 bg-gray-900/80 backdrop-blur-sm rounded-lg px-4 py-2">
+                        <!-- Search Button -->
+                        <button id="searchButton" class="p-2 text-gray-300 hover:text-white transition-colors duration-300" title="Search">
+                          <i class="fas fa-search"></i>
+                        </button>
+                        <!-- Dark Mode Toggle -->
+                        <button id="darkModeToggle" class="p-2 text-gray-300 hover:text-white transition-colors duration-300" title="Toggle Dark Mode">
+                          <i class="fas fa-sun" id="darkModeIcon"></i>
+                        </button>
+                        <!-- Text Size Slider -->
+                        <div class="flex items-center space-x-2">
+                          <i class="fas fa-text-height text-gray-300 text-sm"></i>
+                          <input
+                            type="range"
+                            id="textSizeSlider"
+                            min="0.5"
+                            max="2.0"
+                            step="0.1"
+                            value="1.0"
+                            class="w-20 h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer slider"
+                            title="Adjust Text Size"
+                          >
+                          <span id="textSizeValue" class="text-gray-300 text-xs w-8">100%</span>
+                        </div>
+                        <!-- Menu Button -->
+                        <button class="p-2 text-gray-300 hover:text-white transition-colors duration-300 md:hidden" title="Menu">
+                          <i class="fas fa-bars"></i>
+                        </button>
+                      </div>
+    </div>
+  </header>
 
-    <div id="layout" class="pure-g">
-
-        {%- include sidebar.html -%}
-
-        <div class="content pure-u-1 pure-u-md-3-4">
-            <div class="md-display">
+  <!-- Search Modal -->
+  <div id="searchModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+    <div class="flex items-center justify-center min-h-screen p-4">
+      <div class="backdrop-blur-sm border-2 border-orange-500 rounded-2xl p-6 w-full max-w-2xl shadow-2xl">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xl font-bold">Search Articles</h3>
+          <button id="closeSearch" class="transition-colors duration-300">
+            <i class="fas fa-times text-xl"></i>
+          </button>
+        </div>
+        <div id="search">
+          <label>
+            <input autocomplete="off" id="search-input" oninput="changeResultContainerDisp(this.value)" placeholder="Search all articles..." type="text" class="w-full p-3 rounded-lg focus:outline-none focus:border-orange-500 transition-colors duration-300"/>
+          </label>
+          <ul id="results-container" style="display: none" class="mt-4 max-h-96 overflow-y-auto"></ul>
+        </div>
+      </div>
+    </div>
             </div>
-            <div class="content-col">
+
+  <div class="flex flex-col md:flex-row min-h-screen items-stretch gap-8 p-6">
+    <aside class="md:w-80 w-full flex-shrink-0 border-4 border-purple-500 rounded-3xl bg-gray-50/95 shadow-2xl p-4 flex flex-col items-center h-full backdrop-blur-sm dark:bg-gray-900/95 dark:border-purple-400">
+      <a href="/" class="block mb-2">
+        <span hidden>{{site.title}} Header Image</span>
+                                <img class="brand-photo rounded-full border-2 border-orange-400 shadow-md transition-transform duration-300 hover:scale-105 w-16 h-16 object-cover" src="{{site.url}}/{{site.header_image}}" alt="Photo of {{site.author}}"/>
+      </a>
+      <h1 class="brand-title text-base font-bold uppercase tracking-wider mt-1 mb-0 text-center">
+        <a href="/" class="text-gray-800 hover:text-orange-600 transition-colors dark:text-white dark:hover:text-orange-400">{{site.title}}</a>
+      </h1>
+      <h2 class="brand-tagline text-xs text-gray-600 mb-2 text-center dark:text-gray-300">{{site.description}}</h2>
+      {%- include links.html -%}
+    </aside>
+    <main class="flex-1 min-w-0 h-full flex flex-col">
+      <div class="border-4 border-blue-500 bg-gray-50/95 shadow-2xl rounded-3xl p-8 md:p-14 flex-1 flex flex-col h-full backdrop-blur-sm dark:bg-gray-900/95 dark:border-blue-400">
+        <div class="md-display"></div>
+        <div class="content-col flex-1 flex flex-col">
                 {{ content }}
                 {%-include footer.html -%}
-
-            </div>
         </div>
     </div>
+    </main>
+  </div>
 
+                                    <!-- Dark Mode and Text Size JavaScript -->
+                         <script>
+                           // Dark mode functionality
+                           const darkModeToggle = document.getElementById('darkModeToggle');
+                           const darkModeIcon = document.getElementById('darkModeIcon');
+                           const body = document.body;
+
+                           // Check for saved dark mode preference
+                           const savedDarkMode = localStorage.getItem('darkMode');
+                           if (savedDarkMode === 'true') {
+                             body.classList.add('dark');
+                             darkModeIcon.classList.remove('fa-sun');
+                             darkModeIcon.classList.add('fa-moon');
+                           } else {
+                             // Default to light mode and show sun icon
+                             body.classList.remove('dark');
+                             darkModeIcon.classList.remove('fa-moon');
+                             darkModeIcon.classList.add('fa-sun');
+                           }
+
+                           // Toggle dark mode function
+                           function toggleDarkMode() {
+                             body.classList.toggle('dark');
+                             const isDark = body.classList.contains('dark');
+                             
+                             if (isDark) {
+                               darkModeIcon.classList.remove('fa-sun');
+                               darkModeIcon.classList.add('fa-moon');
+                             } else {
+                               darkModeIcon.classList.remove('fa-moon');
+                               darkModeIcon.classList.add('fa-sun');
+                             }
+                             
+                             localStorage.setItem('darkMode', isDark);
+                           }
+
+                           // Dark mode toggle event listener
+                           darkModeToggle.addEventListener('click', toggleDarkMode);
+
+                           // Text size functionality
+                           const textSizeSlider = document.getElementById('textSizeSlider');
+                           const textSizeValue = document.getElementById('textSizeValue');
+
+                           // Check for saved text size preference
+                           const savedTextSize = localStorage.getItem('textSize');
+                           if (savedTextSize) {
+                             textSizeSlider.value = savedTextSize;
+                             updateTextSize(savedTextSize);
+                           }
+
+                           // Update text size function
+                           function updateTextSize(size) {
+                             const percentage = Math.round(size * 100);
+                             textSizeValue.textContent = percentage + '%';
+                             
+                             // Update body font size
+                             body.style.fontSize = size + 'rem';
+                             
+                             // Update post content specifically with !important
+                             const postBody = document.querySelector('.post-body');
+                             if (postBody) {
+                               postBody.style.setProperty('font-size', size + 'rem', 'important');
+                             }
+                             
+                             // Update post title
+                             const postTitle = document.querySelector('.post-title');
+                             if (postTitle) {
+                               postTitle.style.setProperty('font-size', (size * 1.5) + 'rem', 'important');
+                             }
+                             
+                             // Update post meta
+                             const postMeta = document.querySelector('.post-meta');
+                             if (postMeta) {
+                               postMeta.style.setProperty('font-size', (size * 0.9) + 'rem', 'important');
+                             }
+                             
+                             // Update all paragraphs in post body
+                             const postParagraphs = document.querySelectorAll('.post-body p');
+                             postParagraphs.forEach(function(p) {
+                               p.style.setProperty('font-size', size + 'rem', 'important');
+                             });
+                             
+                             // Update all list items in post body
+                             const postListItems = document.querySelectorAll('.post-body li');
+                             postListItems.forEach(function(li) {
+                               li.style.setProperty('font-size', size + 'rem', 'important');
+                             });
+                             
+                             // Update images in post content
+                             const postImages = document.querySelectorAll('.post-body img');
+                             postImages.forEach(function(img) {
+                               const baseWidth = img.getAttribute('data-original-width') || img.naturalWidth || img.offsetWidth;
+                               if (!img.getAttribute('data-original-width')) {
+                                 img.setAttribute('data-original-width', baseWidth);
+                               }
+                               const scaleFactor = size / 1.0; // Scale relative to base size
+                               img.style.width = (baseWidth * scaleFactor) + 'px';
+                               img.style.height = 'auto';
+                               img.style.maxWidth = '100%';
+                             });
+                             
+                             localStorage.setItem('textSize', size);
+                           }
+
+                           // Slider event listener
+                           textSizeSlider.addEventListener('input', (e) => {
+                             updateTextSize(e.target.value);
+                           });
+
+                           // Initialize text size on page load
+                           updateTextSize(textSizeSlider.value);
+                         </script>
+
+                     <!-- Search Functionality -->
+            <script>
+              // Search modal controls
+              const searchButton = document.getElementById('searchButton');
+              const searchModal = document.getElementById('searchModal');
+              const closeSearch = document.getElementById('closeSearch');
+
+              // Open search modal
+              searchButton.addEventListener('click', function() {
+                searchModal.classList.remove('hidden');
+                document.getElementById('search-input').focus();
+              });
+
+              // Close search modal
+              closeSearch.addEventListener('click', function() {
+                searchModal.classList.add('hidden');
+              });
+
+              // Close modal when clicking outside
+              searchModal.addEventListener('click', function(e) {
+                if (e.target === searchModal) {
+                  searchModal.classList.add('hidden');
+                }
+              });
+
+              // Close modal with Escape key
+              document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && !searchModal.classList.contains('hidden')) {
+                  searchModal.classList.add('hidden');
+                }
+              });
+
+              // Search functionality
+              function changeResultContainerDisp(val) {
+                if (val) {
+                  document.getElementById("results-container").style.display = "block";
+                  document.getElementById("search-input").addEventListener("blur", function () {
+                    document.addEventListener("click", function (event) {
+                      var isClickInside = document.getElementById("results-container").contains(event.target);
+                      if (!isClickInside) {
+                        document.getElementById("results-container").style.display = "none";
+                      }
+                    })
+                  })
+                } else {
+                  document.getElementById("results-container").style.display = "none";
+                }
+              }
+
+              // Initialize Simple Jekyll Search
+              var sjs = SimpleJekyllSearch({
+                searchInput: document.getElementById("search-input"),
+                resultsContainer: document.getElementById("results-container"),
+                json: "/search.json",
+                searchResultTemplate: "<li class='search_res' style='list-style: none; margin-bottom: 0.5rem;'><a href='{{ site.url }}{url}' class='block p-3 rounded-lg transition-colors duration-300'><p class='font-semibold text-lg'>{title}</p></a></li>",
+                noResultsText: "<li class='text-center p-4'>No results found. Try another search.</li>",
+                fuzzy: false,
+                limit: 12
+              });
+            </script>
+
+            <!-- Code Block Copy and Collapse Functionality -->
+            <script>
+              // Add copy buttons to Rouge code blocks
+              document.addEventListener('DOMContentLoaded', function() {
+                // Find all Rouge code blocks
+                const codeBlocks = document.querySelectorAll('.highlight');
+                
+                codeBlocks.forEach(function(block, index) {
+                  // Create button container
+                  const buttonContainer = document.createElement('div');
+                  buttonContainer.className = 'code-buttons';
+                  buttonContainer.style.cssText = `
+                    position: absolute;
+                    top: 0.5rem;
+                    right: 0.5rem;
+                    display: flex;
+                    gap: 0.25rem;
+                    z-index: 10;
+                    background: transparent;
+                  `;
+                  
+                  // Create copy button
+                  const copyButton = document.createElement('div');
+                  copyButton.className = 'copy-button';
+                  copyButton.innerHTML = '<i class="fas fa-copy"></i>';
+                  copyButton.title = 'Copy code';
+                  copyButton.style.cssText = `
+                    background: #4B5563;
+                    color: #F9FAFB;
+                    border: none;
+                    border-radius: 0.25rem;
+                    padding: 0;
+                    margin: 0;
+                    font-size: 0.875rem;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 2rem;
+                    height: 2rem;
+                    box-shadow: none;
+                    outline: none;
+                    position: relative;
+                    z-index: 1;
+                  `;
+                  
+                  // Add hover effects
+                  copyButton.addEventListener('mouseenter', function() {
+                    copyButton.style.background = '#F97316';
+                    copyButton.style.transform = 'translateY(-1px)';
+                  });
+                  
+                  copyButton.addEventListener('mouseleave', function() {
+                    copyButton.style.background = '#4B5563';
+                    copyButton.style.transform = 'translateY(0)';
+                  });
+                  
+                  // Add copy click handler
+                  copyButton.addEventListener('click', function() {
+                    const codeElement = block.querySelector('code');
+                    if (codeElement) {
+                      navigator.clipboard.writeText(codeElement.textContent).then(function() {
+                        copyButton.innerHTML = '<i class="fas fa-check"></i>';
+                        copyButton.style.background = '#10B981';
+                        copyButton.title = 'Copied!';
+                        
+                        setTimeout(function() {
+                          copyButton.innerHTML = '<i class="fas fa-copy"></i>';
+                          copyButton.style.background = '#4B5563';
+                          copyButton.title = 'Copy code';
+                        }, 2000);
+                      });
+                    }
+                  });
+                  
+                  // Add button to container
+                  buttonContainer.appendChild(copyButton);
+                  
+                  // Add container to block
+                  block.appendChild(buttonContainer);
+                });
+              });
+            </script>
 </body>
 
 </html>

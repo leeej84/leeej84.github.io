@@ -41,10 +41,10 @@ layout: default
 
                 <div class="post-description">
                     <p class="md-display">
-                        <em>{{ post.content | strip_html | escape | truncate: 400}}</em>
+                        <em>{% assign content_text = post.content | strip_html | escape %}{% assign first_code = content_text | split: 'PowerShell:' | first %}{% assign clean_preview = first_code | split: 'Function' | first %}{{ clean_preview | truncate: 400 }}</em>
                     </p>
                     <p class="sm-display">
-                        <em>{{ post.content | strip_html | escape | truncate: 300}}</em>
+                        <em>{% assign content_text = post.content | strip_html | escape %}{% assign first_code = content_text | split: 'PowerShell:' | first %}{% assign clean_preview = first_code | split: 'Function' | first %}{{ clean_preview | truncate: 300 }}</em>
                     </p>
                 </div>
             </section>

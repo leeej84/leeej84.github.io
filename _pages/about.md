@@ -4,7 +4,7 @@ title: About Me
 permalink: /about/
 ---
 
-<img src="{{{site.url}}/assets/Leee.jpg" width="250px" height="250px" alt="Photo of {{site.author}}"/>
+<img src="{{site.url}}/assets/Leee.jpg" width="250px" height="250px" alt="Photo of {{site.author}}" class="about-photo"/>
 
 ### Bio
 
