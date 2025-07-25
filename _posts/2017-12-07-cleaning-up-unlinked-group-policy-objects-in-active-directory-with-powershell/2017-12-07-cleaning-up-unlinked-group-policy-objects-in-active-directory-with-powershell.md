@@ -15,4 +15,4 @@ Sweet and short but useful. (# Comment the remove line if you don't want to remo
 
 Get-GPO -All | Sort-Object displayname | Where-Object { If ( $\_ | Get-GPOReport -ReportType XML | Select-String -NotMatch "" )       
 
-{  $backupReportPath = $backupPath + "\\" + $\_.DisplayName + ".html"  Backup-GPO -Name $\_.DisplayName -Path $backupPath  Get-GPOReport -Name $\_.DisplayName -ReportType Html -Path $backupReportPath    $\_.DisplayName | Out-File $backupPath + "UnLinked\_GPO\_List.txt" -Append  $\_.Displayname | remove-gpo -Confirm  }  } \[/cc\]
+{  $backupReportPath = $backupPath + "\\" + $\_.DisplayName + ".html"  Backup-GPO -Name $\_.DisplayName -Path $backupPath  Get-GPOReport -Name $\_.DisplayName -ReportType Html -Path $backupReportPath    $\_.DisplayName | Out-File $backupPath + "UnLinked\_GPO\_List.txt" -Append  $\_.Displayname | remove-gpo -Confirm  }  } ```

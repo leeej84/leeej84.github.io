@@ -49,7 +49,7 @@ Let's dive in and remove the lines so we're left with this:
 
 You can see I've removed the current tasks in preparation for adding one.
 
-\[cc\] # Open the text file App\_Start("Fileshare File", "", "\\\\lj.local\\Citrix\\TSHOME\\FileshareTest.txt", "Title", "Fileshare Test") # Type Fileshare File into the text file VSI\_Type( "Fileshare Test","Fileshare File") # Save the text file VSI\_Save("Fileshare File", "{CTRLDOWN}s{CTRLUP}", "\\\\lj.local\\Citrix\\TSHOME\\FileshareTest.txt") # Revert the typing in the text file VSI\_Type("Fileshare File", "{CTRLDOWN}z{CTRLUP}") # Save the text file VSI\_Save("Fileshare File", "{CTRLDOWN}s{CTRLUP}", "\\\\lj.local\\Citrix\\TSHOME\\FileshareTest.txt") # Close the text file App\_Close("Fileshare File", "Title", "Fileshare Test") \[/cc\]
+\[cc\] # Open the text file App\_Start("Fileshare File", "", "\\\\lj.local\\Citrix\\TSHOME\\FileshareTest.txt", "Title", "Fileshare Test") # Type Fileshare File into the text file VSI\_Type( "Fileshare Test","Fileshare File") # Save the text file VSI\_Save("Fileshare File", "{CTRLDOWN}s{CTRLUP}", "\\\\lj.local\\Citrix\\TSHOME\\FileshareTest.txt") # Revert the typing in the text file VSI\_Type("Fileshare File", "{CTRLDOWN}z{CTRLUP}") # Save the text file VSI\_Save("Fileshare File", "{CTRLDOWN}s{CTRLUP}", "\\\\lj.local\\Citrix\\TSHOME\\FileshareTest.txt") # Close the text file App\_Close("Fileshare File", "Title", "Fileshare Test") ```
 
 I've now added the above lines to the workload file.
 

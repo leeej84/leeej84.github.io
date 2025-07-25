@@ -35,7 +35,7 @@ The setting in Chrome for the flag _chrome://flags/#network-service-in-process_Â
 
 The get SATC to work correctly this needs to be enabled. The kicker! There is no way to enable this through the registry or through GPOs. I did this.
 
-{% highlight powershell %}
+```powershell
 GPP - Registry
 HKEY\_CLASSES_ROOT\ChromeHTML\shell\open\command\
 Default - REG_SZ
@@ -43,7 +43,7 @@ Default - REG_SZ
 
 GPP - Shortcut:
 "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --enable-features=NetworkServiceInProcess
-{% endhighlight %}
+```
 This bascially ensures that all shortcuts enable this flag when being run and also any links that kick off a chrome instance internally also enable the flag on launch.
 
 I really hope this helps someone resolve this much more quickly.

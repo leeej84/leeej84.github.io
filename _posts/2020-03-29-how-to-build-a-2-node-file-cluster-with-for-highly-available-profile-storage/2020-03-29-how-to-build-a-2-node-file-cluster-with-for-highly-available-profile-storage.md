@@ -126,9 +126,9 @@ Add Failover Clustering and all associated Features.
 
 Powershell:
 
-{% highlight powershell %}
+```powershell
 Install-WindowsFeature -Name FS-FileServer Install-WindowsFeature -Name Failover-Clustering -IncludeManagementTools Get-WindowsFeature -Name FS-FileServer Get-WindowsFeature -Name Failover-Clustering Restart-Computer – Force
-{% endhighlight %}
+```
 
 Repeat this step for node 2 also or use server manager to configure both nodes.
 
@@ -153,9 +153,9 @@ Run all tests so we can see if anything is missing
 After the tests have run you should receive an output like the above. Note any warnings or errors here and rectify this before creating the cluster.
 
 Powershell: 
-{% highlight powershell %}
+```powershell
 Test-Cluster -Node "MSFLCLS01.ctxlab.local","MSFLCLS02.ctxlab.local"
-{% endhighlight %}
+```
 
 ![](images/032920_1849_Howtobuilda28.png)
 
@@ -182,9 +182,9 @@ Untick the box that adds all eligible storage, we will cover that later.
 You can see the cluster is now created.
 
 PowerShell: 
-{% highlight powershell %}
+```powershell
 New-Cluster -Name CLUSTER -Node "MSFLCLS01.ctxlab.local"," MSFLCLS02.ctxlab.local " -StaticAddress 192.168.1.220
-{% endhighlight %}
+```
 
 Now we need to configure the storage.
 
@@ -219,9 +219,9 @@ Create a New Simple Volume.
 Note I am using ReFS for the file system and I'm giving each volume a name here. ReFS is being used because VHDX operations like compacting and merging are very fast on this file system type. Make sure both disks have the same configuration.
 
 PowerShell: 
-{% highlight powershell %}
+```powershell
 Get-Disk | Where-Object {$\_.OperationalStatus -eq "Offline"} | Set-Disk -IsOffline $false Get-Disk | Where-Object partitionstyle -eq "RAW" | Initialize-Disk -PartitionStyle GPT -PassThru | New-Partition -AssignDriveLetter -UseMaximumSize | Format-Volume -FileSystem REFS -Confirm:$false
-{% endhighlight %}
+```
 
 ![](images/032920_1849_Howtobuilda45.png)
 
@@ -234,9 +234,9 @@ We're presented with the volumes we just formatted and put online.
 ![](images/032920_1849_Howtobuilda47.png)
 
 They are now added. PowerShell:
-{% highlight powershell %} 
+```powershell 
 $clusterDisks = Get-ClusterAvailableDisk | Sort Size -Descending | Add-ClusterDisk
-{% endhighlight %}
+```
 
 We will now configure the Quorum disk witness but first, what is Quorum?
 
@@ -263,9 +263,9 @@ We see here the quorum volume we setup earlier, if you see more than one disk ju
 ![](images/032920_1849_Howtobuilda54.png)
 
 PowerShell: 
-{% highlight powershell %}
+```powershell
 Set-ClusterQuorum -DiskWitness $($ClusterDisks | Select -Last 1)
-{% endhighlight %}
+```
 
 Now we're going to add the file server role.
 
@@ -318,13 +318,13 @@ Set your permissions as required for your environment.
 You should now see your share available. Browse to it to ensure you can see it.
 
 PowerShell: 
-{% highlight powershell %}
+```powershell
 Add-ClusterFileServerRole -Name MSFLCLS_PD -Storage ($ClusterDisks | Select -first 1).Name -StaticAddress 192.168.1.223
 
 $driverLetter = Get-Disk | Sort 'Total Size' | Select -First 1 | Get-Partition | Sort Size -Descending | Select -First 1 DriveLetter
 
 New-SmbShare -Name Share -Path "$($driverLetter.DriveLetter):\Shares\Share" -ContinuouslyAvailable $tru
-{% endhighlight %}
+```
 ## Summary<a id="configure-virtual-machine-2">
 
 You now have a file cluster with continuous availability that can be used for any profile disk solution. I have also embedded a video below to demonstrate what happens to a real user during a failover.

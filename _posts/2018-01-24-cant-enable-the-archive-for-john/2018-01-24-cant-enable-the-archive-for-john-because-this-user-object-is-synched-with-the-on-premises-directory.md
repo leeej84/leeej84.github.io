@@ -37,7 +37,7 @@ I wrote a script to handle this for test users and also a whole organisation bas
 
 You will need exchange online admin credentials and also AD rights in order to apply these settings, you are directly modifying the attributes. If you aren't sure what you're doing please make sure you run in test mode and specify only 1 or 2 users.
 
-\[cc lang="powershell"\]
+```powershell
 ###Script to enable archive mailboxes for specified users
 
 ###Edit log file location in log Function below
@@ -320,4 +320,4 @@ Write-Log " Online user - enabled archiving for this user $result.Name"
 
 Remove-PSSession $Session
 
-\[/cc\]
+```

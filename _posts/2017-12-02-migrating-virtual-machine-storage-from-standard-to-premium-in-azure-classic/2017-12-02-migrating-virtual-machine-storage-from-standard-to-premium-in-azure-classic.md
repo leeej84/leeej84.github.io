@@ -57,7 +57,7 @@ Here is the powershell script I used:
 
 #To Cancel a job if you decided you have waited too long #$blobCopy1 | Stop-AzureStorageBlobCopy #$blobCopy2 | Stop-AzureStorageBlobCopy
 
-\[/cc\]
+```
 
 A few notes:
 

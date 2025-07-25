@@ -13,6 +13,6 @@ $currentUPN = $newUPN =
 
 Import-Module Online Connect-MSolService Get-MSolUser -UserPrincipalName $currentUPN Set-MSolUser -UserPrincipalName $currentUPN -NewUserPrincipalName $newUPN Get-MSolUser -UserPrincipalName $newUPN
 
-\[/cc\]
+```
 
 No errors should be seen when running this script if all works okay.

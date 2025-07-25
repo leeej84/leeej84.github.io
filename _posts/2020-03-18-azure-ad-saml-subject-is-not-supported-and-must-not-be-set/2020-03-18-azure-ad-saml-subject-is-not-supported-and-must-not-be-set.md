@@ -21,9 +21,9 @@ Microsoft states here: [https://docs.microsoft.com/en-us/azure/active-directory/
 
 There is a way however to tell the ADC not to set the subject at all (even though Azure should ignore it).  
 Putty in to the ADC and run the following command:
-{% highlight powershell%}
+```powershell
 shell nsapimgr_wr.sh -ys call=ns_saml_dont_send_subject
-{% endhighlight %}
+```
 This then enables the flow correctly without error. Should require this to be persistent across reboots, edit your /nsconfig/rc.netscaler file to add the line:  
 nsapimgr\_wr.sh -ys call=ns\_saml\_dont\_send\_subject
 

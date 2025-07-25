@@ -25,7 +25,7 @@ bind ssl cipher VPX\_APLUS\_CIPHER\_23.03.16 -cipherName TLS1-DHE-RSA-AES-128-CB
 bind ssl cipher VPX\_APLUS\_CIPHER\_23.03.16 -cipherName TLS1-AES-128-CBC-SHA -cipherPriority 7
 bind ssl cipher VPX\_APLUS\_CIPHER\_23.03.16 -cipherName TLS1-AES-256-CBC-SHA -cipherPriority 8
 bind ssl cipher VPX\_APLUS\_CIPHER\_23.03.16 -cipherName SSL3-DES-CBC3-SHA -cipherPriority 9
-\[/cc\]
+```
 
 If you don't understand this, look at this blog article from George Spiers on generating a Qualsys SSL Labs A+ rating on your NetScaler and just replace the ciphers with the above.
 

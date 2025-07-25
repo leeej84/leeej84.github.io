@@ -71,9 +71,9 @@ Select the File Server Role
 Add Failover Clustering and all associated Features.
 
 **Powershell:**
-{% highlight powershell linenos %}
+```powershell
 Install-WindowsFeature -Name FS-FileServer Install-WindowsFeature -Name Failover-Clustering -IncludeManagementTools Get-WindowsFeature -Name FS-FileServer Get-WindowsFeature -Name Failover-Clustering Restart-Computer – Force
-{% endhighlight %}
+```
 Repeat this step for node 2 also or use server manager to configure both nodes.
 
 ![](images/051020_1600_Howtobuilda12.png)
@@ -97,9 +97,9 @@ Run all tests so we can see if anything is missing
 After the tests have run you should receive an output like the above. Note any warnings or errors here and rectify this before creating the cluster.
 
 **Powershell:**
-{% highlight powershell linenos %}
+```powershell
 Test-Cluster -Node "NODE1","NODE2"
-{% endhighlight %}
+```
 
 ![](images/051020_1600_Howtobuilda18.png)
 
@@ -124,9 +124,9 @@ This IP address and name is the name that will be added to AD for the cluster, t
 You can see the cluster is now created.
 
 **PowerShell:**
-{% highlight powershell linenos %}
+```powershell
 New-Cluster -Name CLUSTER -Node "MSFLCLS01.ctxlab.local"," MSFLCLS02.ctxlab.local " -StaticAddress 192.168.1.220
-{% endhighlight %}
+```
 **Enable Storage Spaces Direct:**
 
 I could only find a way of doing this using PowerShell
@@ -174,9 +174,9 @@ Select Next to confirm.
 We've now configured the quorum.
 
 **PowerShell:**
-{% highlight powershell linenos %}
+```powershell
 Set-ClusterQuorum -NodeAndFileShareMajority \\\\MSFLCLS\_PD\\Quorum
-{% endhighlight %}
+```
 We will now setup the clustered shared volume between the two nodes utilising local storage, we can now open server manager and navigate to the file and storage services tab.
 
 ![](images/051020_1600_Howtobuilda34.png)
@@ -238,9 +238,9 @@ Review the summary and select create.
 With the volume provisioned manually (Not using PowerShell – we will need to add the disk in failover cluster manager)
 
 **PowerShell:**
-{% highlight powershell linenos %}
+```powershell
 $volume = New-Volume -StoragePoolFriendlyName S2D\* -FriendlyName Disk1 -FileSystem CSVFS\_REFS -Size 60GB
-{% endhighlight %}
+```
 
 Now we're going to add the file server role.
 
@@ -293,13 +293,13 @@ Set your permissions as required for your environment.
 You should now see your share available. Browse to it to ensure you can see it.
 
 **PowerShell:**
-{% highlight powershell %}
+```powershell
 Add-ClusterScaleOutFileServerRole -Name MSSOFS\_UPD
 
 New-Item -Path C:\\ClusterStorage\\$($volume.FileSystemLabel)\\Share -ItemType Directory
 
 New-SmbShare -Name Share -Path C:\\ClusterStorage\\$($volume.FileSystemLabel)\\Share
-{% endhighlight %}
+```
 Summary:
 
 You now have a scale-out-file-server spreading the load of all access across the two VM's and being kept in sync using storage spaces direct. This can be used for any profile disk solution.

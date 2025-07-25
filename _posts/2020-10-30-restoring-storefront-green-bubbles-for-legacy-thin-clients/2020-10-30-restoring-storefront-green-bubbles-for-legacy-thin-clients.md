@@ -15,9 +15,9 @@ I installed an older version of StoreFront (7.18) and decided to run a capture w
 
 You can see here that the file being edited is the web.config file in the stores website. My friend and colleague [Guy Leech](https://twitter.com/guyrleech){:target="_blank"} had posted just this morning about a [script](https://github.com/guyrleech/General-Scripts/blob/master/Get%20chunk%20at%20offset.ps1){:target="_blank"} he had written that allows you to take the information from procmon and then retrieve the exact information in a logfile that has been written.
 
-{% highlight powershell %}
+```powershell
 Check_File.ps1 -path C:\inetpub\wwwroot\Citrix\BodgeWeb\web.config -procmonDetail 'Offset: 12,288, Length: 4,096'
-{% endhighlight %}
+```
 
 Running the above returns all the text amended in the file at that point in time, comparing the two outputs bought me to this:
 

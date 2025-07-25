@@ -68,7 +68,7 @@ It watches the loginVSI log folder for the test to see if there are errors or if
 
 The following parameters must be set in the scripts in order for it to all function correctly:
 
-{% highlight powershell linenos %}
+```powershell
 ###Common Details Section###  
 [string] $vsishare = "\\loginvsi-01.ctxlab.local\VSI_Share" # \\servername\sharename used a base for other scripts  
 [int] $testDuration = 30 # Number of minutes to run test  
@@ -98,7 +98,7 @@ The following parameters must be set in the scripts in order for it to all funct
 [string] $perScriptLocation = "C:\Scripts\VM_Perfmon\Perfmon.ps1"  
 [string] $additionalMachines = "dc-01.ctxlab.local","loginvsi-01.ctxlab.local"  
 ###VM Perfmon Monitoring###  
-{% endhighlight %}
+```
 
 **Download:**
 

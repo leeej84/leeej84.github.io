@@ -145,7 +145,7 @@ Note: There are options within the script:
 - $applicationName – this variable can be set to configure the name of the application to be launched automatically
 - $removeUserProfile – this variable can be set to clear out the user's profile after each logoff, this alleviates the need to run any receiver clean up on logoff and is especially handy if it is a domain joined device with multiple user profiles.
 
-\[cc lang=powershell\] #Auto Run Citrix Application or Not $autoRunApp = $true
+```powershell #Auto Run Citrix Application or Not $autoRunApp = $true
 
 #Remove User Profile on logoff $removeUserProfile = $true
 
@@ -165,4 +165,4 @@ If ($removeUserProfile) { #Get User SID for Registry Profile Tweak $userSID = \[
 
 #Run regedit to silently import the reg file Invoke-expression -Command:("C:\\Windows\\Regedit.exe /s $tempFolder\\temp.reg") }
 
-#Log the user off Invoke-expression -Command:("C:\\Windows\\System32\\logoff.exe") \[/cc\] [![](images/022618_2212_Configuring14.png)](https://www.leeejeffries.com/wp-content/uploads/2018/02/Logon.zip)
+#Log the user off Invoke-expression -Command:("C:\\Windows\\System32\\logoff.exe") ``` [![](images/022618_2212_Configuring14.png)](https://www.leeejeffries.com/wp-content/uploads/2018/02/Logon.zip)

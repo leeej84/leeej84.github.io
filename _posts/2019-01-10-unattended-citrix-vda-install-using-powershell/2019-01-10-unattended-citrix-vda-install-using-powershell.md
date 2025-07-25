@@ -35,7 +35,7 @@ To achieve this we need a reboot in-between some of these actions; we utilise wi
 - Sets the AutoLogon count to 1
 - Sets the Script action for AutoLogon to fire the next script
 
-{% highlight powershell linenos %}
+```powershell
 ######## 
 #Session Server Configuration 
 #Copyright: Free to use, please leave this header intact #Author: Leee Jeffries 
@@ -168,7 +168,7 @@ if (Test-Path "$downloadLoc\\$dotNetFilename") {
 Set-AutoLogon -DefaultUsername $secUser -DefaultPassword $secPasswd -Script "C:\Windows\System32\WindowsPowershell\V1.0\powershell.exe -ExecutionPolicy Unrestricted -File ""$currentFolder\CitrixSessionServerConfig.ps1""" -AutoLogonCount 1
 
 & shutdown -r -t 05 
-{% endhighlight %}
+```
 
  **Script 2:**
 
@@ -177,7 +177,7 @@ Set-AutoLogon -DefaultUsername $secUser -DefaultPassword $secPasswd -Script "C:\
 - Downloads the XenApp and XenDesktop 7.18 VDA Setup from Azure storage
 - Installs the Virtual Delivery Agent in an unattended fashion whilst also specifying the delivery controller(s) in the command line
 
-{% highlight powershell linenos %}
+```powershell
 ######## 
 #Session Server Configuration 
 #Copyright: Free to use, please leave this header intact 
@@ -240,7 +240,7 @@ if (Test-Path "$downloadLoc\VDAServerSetup_7.18.exe") {
 }
 
 & shutdown -r -t 05
-{% endhighlight %}
+```
 
 Lastly - please remember to add your controllers to the VDA installation line.
 

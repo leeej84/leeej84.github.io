@@ -17,9 +17,9 @@ Setting: Do not show the 'new application installed' notification
 
 So you've installed your shiny new Win10 machine, and you've configured your default app file associations by logging in as a user and using
 
-{% highlight powershell %}
+```powershell
 Dism /Online /Export-DefaultAppAssociations:""
-{% endhighlight %}
+```
 
 and then settings it via GPO as per the below.
 
@@ -33,12 +33,12 @@ Edge, that's what gives, specifically modern app hooks. I had an image whereby I
 
 I kept seeing this each time I launched a PDF, no matter what I did. I checked and double-checked my XML file to make sure it was right. This is how I got around it.
 
-{% highlight powershell%}
+```powershell
 Windows Registry Editor Version 5.00 
 [HKEY_CURRENT_USER\SOFTWARE\Classes\AppXd4nrz8ff68srnhf9t5a8sbjyar1cr723] 
 "NoOpenWith"="" 
 "NoStaticDefaultVerb"=""
-{% endhighlight %}
+```
 
 Implement the above registry settings via your preferred method. This will tell Edge to stop trying to grab file associations for PDF files.
 

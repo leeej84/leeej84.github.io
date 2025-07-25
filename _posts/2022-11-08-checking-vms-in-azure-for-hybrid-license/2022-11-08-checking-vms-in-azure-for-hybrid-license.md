@@ -20,7 +20,7 @@ If you’ve been creating VM’s manually you may have missed this tick box, if 
 
 **Terraform:**
 
-{% highlight powershell linenos %}
+```powershell
 resource "azurerm_virtual_machine" "my_virtual_machine" {
     name = "myvm"
     location = "location"
@@ -29,17 +29,17 @@ resource "azurerm_virtual_machine" "my_virtual_machine" {
     vm_size = "Standard_F2"
     license_type = "Windows_Server"
 }
-{% endhighlight %}
+```
 
 **PowerShell:**
 
-{% highlight powershell linenos %} 
+```powershell 
 New-AzVm -ResourceGroupName "myResourceGroup" `
 -Name "myvm" `
 -Location "UK South" `
 -ImageName "Win2016Datacenter" `
 -LicenseType "Windows_Server"
-{% endhighlight %}
+```
 
 The license type parameter in both terraform and PowerShell is used to designate that you have a pre-existing license.
 
@@ -47,7 +47,7 @@ That being said, you’ve got a bunch of VM’s in Azure; how do you see which o
 Here’s a script for you; this script will run through all your VM’s find ones without a hybrid license assigned and then give you the option to select the VMs and apply a hybrid license to them.  
 The only draw-back to this script is that it’s not always able to automatically discover which type of OS is running on the VM (depending on how the VM is built) and therefore I’ve left this section out. You need to make sure you are selecting server OSes for server hybrid licenses and Desktop Oses for client hybrid licenses.
 
-{% highlight powershell linenos %}
+```powershell
 #Loop through resource groups to find the VM 
 #Note - Only select server VMs when the variable for $license_type is set to server 
 #Note - Only select desktop VMs when the variable for $license_type is set to client 
@@ -106,4 +106,4 @@ forEach ($vm in $selectedVMs) {
     $tempVM.LicenseType = $licenseSet 
     Update-AzVM -ResourceGroupName $vm.vmRG -VM $tempVM 
 }
-{% endhighlight %}
+```

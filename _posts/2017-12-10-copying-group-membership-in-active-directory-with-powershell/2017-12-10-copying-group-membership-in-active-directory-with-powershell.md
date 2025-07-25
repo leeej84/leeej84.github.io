@@ -13,4 +13,4 @@ I had a requirement to configure a bunch of user accounts identically with regar
 
 Below is the script I used:
 
-\[cc lang=“powershell”\] Import-Module ActiveDirectory $sourceUser = "" $destUser = "" Get-ADUser -Identity $sourceUser -Properties memberof | Select-Object -ExpandProperty memberof | Add-ADGroupMember -Members $destUser -PassThru | Select-Object -Property SamAccountName \[/cc\]
+\[cc lang=“powershell”\] Import-Module ActiveDirectory $sourceUser = "" $destUser = "" Get-ADUser -Identity $sourceUser -Properties memberof | Select-Object -ExpandProperty memberof | Add-ADGroupMember -Members $destUser -PassThru | Select-Object -Property SamAccountName ```

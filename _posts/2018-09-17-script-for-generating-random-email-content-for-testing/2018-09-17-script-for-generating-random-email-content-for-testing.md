@@ -16,7 +16,7 @@ If you find this script useful of think it could do with a few adjustments pleas
 Random content bundle is available for download here: [Random-Content.zip](https://leeejeffries-my.sharepoint.com/:u:/p/leee_jeffries/EZtHB7ripE5Gs1f8o8s4dLEBx7tdGgPqFhVtdLm4Nor-yw?e=dxzroz){:target="_blank"}
 
 Code: #
-{% highlight powershell%} 
+```powershell 
 ######## 
 #Random Email Content Generator 
 #Copyright: Free to use, please leave this header intact #Author: Leee Jeffries 
@@ -129,6 +129,6 @@ do {
 
     #Progress of email messages "Email number $tracker - $numberSelected - $selectedSubject - $selectedAttachment"
 } until ($x -eq 0)
-{% endhighlight %}
+```
 
 Github Link: [https://github.com/leeej84/Random-Email-Content-Generator](https://github.com/leeej84/Random-Email-Content-Generator){:target="_blank"}

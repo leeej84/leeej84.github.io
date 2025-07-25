@@ -18,7 +18,7 @@ Random content bundle is available for download here:
 
 Code:  
 
-{% highlight powershell linenos %}
+```powershell
 ######## #Random Zip File Content Generator
 #Copyright: Free to use, please leave this header intact
 #Author: Leee Jeffries #Company: LJC (https://www.leeejeffries.com)
@@ -153,7 +153,7 @@ do {
     $x++
 
 } until ($x -eq ($numberOfZipFiles+1)) 
-{% endhighlight %}
+```
 
 Github Link:  
 [https://github.com/leeej84/Random-Zip-Content-Generator](https://github.com/leeej84/Random-Zip-Content-Generator)

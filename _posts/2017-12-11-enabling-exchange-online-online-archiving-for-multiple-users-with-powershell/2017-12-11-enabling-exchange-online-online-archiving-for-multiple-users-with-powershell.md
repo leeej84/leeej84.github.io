@@ -57,4 +57,4 @@ $user | Enable-Mailbox -Archive Write-Log " enabled archiving for this user $use
 
 } } #Moving forwards this could be used for new user accounts, although templates should be setup to enable this to be enabled automatically #Get-Mailbox -Filter {ArchiveStatus -Eq "None" -AND RecipientTypeDetails -eq "UserMailbox"} | Enable-Mailbox -Archive
 
-#Close connection to exchange Remove-PSSession $Session } \[/cc\]
+#Close connection to exchange Remove-PSSession $Session } ```

@@ -17,7 +17,7 @@ The Internet Information Server (IIS) provide wizards in the administration user
 
 Use Notepad to modify the following sample INF file according to your needs. Save the file as ssl.inf for example
 
-{% highlight powershell %} 
+```powershell 
 [Version] 
 Signature="$Windows NT$" 
 [NewRequest] 
@@ -43,7 +43,7 @@ szOID_PKIX_KP_CLIENT_AUTH = "1.3.6.1.5.5.7.3.2"
 %szOID_ENHANCED_KEY_USAGE% = "{text}%szOID_PKIX_KP_SERVER_AUTH%,%szOID_PKIX_KP_CLIENT_AUTH%" 
 [RequestAttributes] 
 CertificateTemplate= WebServer
-{% endhighlight %}
+```
 
 **Notes:**
 

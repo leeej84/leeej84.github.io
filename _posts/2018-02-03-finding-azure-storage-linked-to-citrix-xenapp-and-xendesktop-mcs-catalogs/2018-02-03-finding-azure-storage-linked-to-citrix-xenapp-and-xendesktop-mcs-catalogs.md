@@ -21,9 +21,9 @@ The column you need here is CitrixProvisioningSchemeId, we can then hop over to 
 
 Hop onto a controller and fire up powershell. Run the following commands to match the ProvisioningSchemeId value to your machine catalogs.
 
-\[cc lang=powershell\]
+```powershell
 asnp Citrix\*
 Get-BrokerCatalog | Select Name, Description, ProvisioningSchemeId
-\[/cc\]
+```
 
 ![](images/020318_1039_FindingAzur2.png)

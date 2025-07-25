@@ -63,9 +63,9 @@ Right click your Collector Set and select Start.
 
 That's is now, data is being collected. For the powershell lovers out there:
 
-{% highlight powershell linenos %}
+```powershell
 Get-Counter -Counter "\LogicalDisk(C:)\Avg. Disk sec/Read","\LogicalDisk(C:)\Avg. Disk sec/Write","\Memory\% Committed Bytes In Use","\Processor(_Total)\% Processor Time" -Continuous -SampleInterval 1 | Export-Counter -Path C:\Temp\Performance.csv -FileFormat CSV -Force
-{% endhighlight %}
+```
 
 You can even run it remotely if you specify -ComputerName
 
@@ -77,7 +77,7 @@ Not incredibly easy to read right now, in comes PPD. Lets convert our file we ge
 
 I wrote a powershell wrapper for PPD.exe so it will automatically look at column headers and convert the data into graphs.
 
-{% highlight powershell linenos %}
+```powershell
 ################################################################################################# 
 #PPD Graphing Script 
 #Copyright: Free to use, please leave this header intact #Author: Leee Jeffries 
@@ -116,7 +116,7 @@ foreach ($csvFile in $csvFiles) {
 
     #Run PPD to create the charts from the performance data 
     $ppdProcess = Start-Process $ppdLocation -ArgumentList '/f ',"$($csvFile.FullName)" -Passthru -Wait -WindowStyle Hidden } 
-{% endhighlight %}
+```
 
 I created a folder – C:\Temp\PPD
 ![](images/080320_1636_Generatinga13.png)
