@@ -4,49 +4,89 @@
 {%- include head.html -%}
 
 <body class="bg-gradient-to-br from-orange-500 via-pink-500 to-blue-500 min-h-screen font-sans">
-                    <!-- Header Bar -->
-                  <header class="bg-gray-800/90 backdrop-blur-sm border-b-2 border-gradient-to-r from-orange-500 via-pink-500 to-blue-500 sticky top-0 z-50">
-                    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-                      <div class="flex items-center space-x-4 bg-gray-900/80 backdrop-blur-sm rounded-lg px-4 py-2">
-                        <h1 class="text-white font-bold text-xl">Leee Jeffries</h1>
-                        <span class="text-gray-300 text-sm">IT Professional & Blogger</span>
-                      </div>
-                                            <div class="flex items-center space-x-4 bg-gray-900/80 backdrop-blur-sm rounded-lg px-4 py-2">
-                        <!-- Search Button -->
-                        <button id="searchButton" class="p-2 text-gray-300 hover:text-white transition-colors duration-300" title="Search">
-                          <i class="fas fa-search"></i>
-                        </button>
-                        <!-- Dark Mode Toggle -->
-                        <button id="darkModeToggle" class="p-2 text-gray-300 hover:text-white transition-colors duration-300" title="Toggle Dark Mode">
-                          <i class="fas fa-sun" id="darkModeIcon"></i>
-                        </button>
-                        <!-- Text Size Slider -->
-                        <div class="flex items-center space-x-2">
-                          <i class="fas fa-text-height text-gray-300 text-sm"></i>
-                          <input
-                            type="range"
-                            id="textSizeSlider"
-                            min="0.5"
-                            max="2.0"
-                            step="0.1"
-                            value="1.0"
-                            class="w-20 h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer slider"
-                            title="Adjust Text Size"
-                          >
-                          <span id="textSizeValue" class="text-gray-300 text-xs w-8">100%</span>
-                        </div>
-                        <!-- Menu Button -->
-                        <button class="p-2 text-gray-300 hover:text-white transition-colors duration-300 md:hidden" title="Menu">
-                          <i class="fas fa-bars"></i>
-                        </button>
-                      </div>
+  <!-- Skip to content link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  
+  <!-- Header Bar -->
+  <header class="bg-gray-800/90 backdrop-blur-sm border-b-2 border-gradient-to-r from-orange-500 via-pink-500 to-blue-500 sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-2 sm:space-x-4 bg-gray-900/80 backdrop-blur-sm rounded-lg px-2 sm:px-4 py-2">
+        <h1 class="text-white font-bold text-lg sm:text-xl">Leee Jeffries</h1>
+        <span class="text-gray-300 text-xs sm:text-sm hidden sm:inline">IT Professional & Blogger</span>
+      </div>
+      <div class="flex items-center space-x-2 sm:space-x-4 bg-gray-900/80 backdrop-blur-sm rounded-lg px-2 sm:px-4 py-2">
+        <!-- Search Button -->
+        <button id="searchButton" class="p-1 sm:p-2 text-gray-300 hover:text-white transition-colors duration-300" title="Search">
+          <i class="fas fa-search text-sm sm:text-base"></i>
+        </button>
+        <!-- Dark Mode Toggle -->
+        <button id="darkModeToggle" class="p-1 sm:p-2 text-gray-300 hover:text-white transition-colors duration-300" title="Toggle Dark Mode">
+          <i class="fas fa-sun text-sm sm:text-base" id="darkModeIcon"></i>
+        </button>
+        <!-- Text Size Slider - Hidden on mobile -->
+        <div class="hidden sm:flex items-center space-x-2">
+          <i class="fas fa-text-height text-gray-300 text-sm"></i>
+          <input
+            type="range"
+            id="textSizeSlider"
+            min="0.5"
+            max="2.0"
+            step="0.1"
+            value="1.0"
+            class="w-16 sm:w-20 h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer slider"
+            title="Adjust Text Size"
+          >
+          <span id="textSizeValue" class="text-gray-300 text-xs w-6 sm:w-8">100%</span>
+        </div>
+      </div>
     </div>
   </header>
+
+  <!-- Mobile Top Navigation Bar -->
+  <nav class="lg:hidden bg-gray-900/95 backdrop-blur-sm border-b border-gray-700 sticky top-16 z-40">
+    <div class="max-w-6xl mx-auto px-4 py-2">
+      <div class="flex items-center justify-between">
+        <!-- Mobile Brand Info -->
+        <div class="flex items-center space-x-3">
+          <img class="brand-photo rounded-full border-2 border-orange-400 shadow-md w-8 h-8 object-cover" src="{{site.url}}/{{site.header_image}}" alt="Photo of {{site.author}}"/>
+          <div class="flex flex-col">
+            <h2 class="text-white text-sm font-bold">{{site.title}}</h2>
+            <p class="text-gray-400 text-xs">{{site.description}}</p>
+          </div>
+        </div>
+        
+        <!-- Mobile Navigation Links -->
+        <div class="flex items-center space-x-1">
+          <a href="/" class="p-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors duration-300" title="Home">
+            <i class="fa-solid fa-house text-sm"></i>
+          </a>
+          <a href="/about" class="p-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors duration-300" title="About">
+            <i class="fas fa-signature text-sm"></i>
+          </a>
+          <a href="/community" class="p-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors duration-300" title="Community">
+            <i class="fa-solid fa-walkie-talkie text-sm"></i>
+          </a>
+          <a href="/tags" class="p-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors duration-300" title="Tags">
+            <i class="fas fa-hashtag text-sm"></i>
+          </a>
+          <a href="/categories" class="p-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors duration-300" title="Categories">
+            <i class="far fa-folder-open text-sm"></i>
+          </a>
+          <a href="/archive" class="p-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors duration-300" title="Archive">
+            <i class="fas fa-archive text-sm"></i>
+          </a>
+          <a href="/feed.xml" class="p-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors duration-300" title="RSS Feed">
+            <i class="fas fa-rss text-sm"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
   <!-- Search Modal -->
   <div id="searchModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
     <div class="flex items-center justify-center min-h-screen p-4">
-      <div class="backdrop-blur-sm border-2 border-orange-500 rounded-2xl p-6 w-full max-w-2xl shadow-2xl">
+      <div class="backdrop-blur-sm border-2 border-orange-500 rounded-2xl p-4 sm:p-6 w-full max-w-2xl shadow-2xl">
         <div class="flex justify-between items-center mb-4">
           <h3 class="text-xl font-bold">Search Articles</h3>
           <button id="closeSearch" class="transition-colors duration-300">
@@ -61,13 +101,14 @@
         </div>
       </div>
     </div>
-            </div>
+  </div>
 
-  <div class="flex flex-col md:flex-row min-h-screen items-stretch gap-8 p-6">
-    <aside class="md:w-80 w-full flex-shrink-0 border-4 border-purple-500 rounded-3xl bg-gray-50/95 shadow-2xl p-4 flex flex-col items-center h-full backdrop-blur-sm dark:bg-gray-900/95 dark:border-purple-400">
+  <div class="flex flex-col lg:flex-row min-h-screen items-stretch gap-4 sm:gap-6 lg:gap-8 p-3 sm:p-4 lg:p-6">
+    <!-- Sidebar - Hidden on mobile, shown on desktop -->
+    <aside class="hidden lg:block lg:w-80 w-full flex-shrink-0 border-4 border-purple-500 rounded-3xl bg-gray-50/95 shadow-2xl p-4 flex flex-col items-center h-full backdrop-blur-sm dark:bg-gray-900/95 dark:border-purple-400">
       <a href="/" class="block mb-2">
         <span hidden>{{site.title}} Header Image</span>
-                                <img class="brand-photo rounded-full border-2 border-orange-400 shadow-md transition-transform duration-300 hover:scale-105 w-16 h-16 object-cover" src="{{site.url}}/{{site.header_image}}" alt="Photo of {{site.author}}"/>
+        <img class="brand-photo rounded-full border-2 border-orange-400 shadow-md transition-transform duration-300 hover:scale-105 w-16 h-16 object-cover" src="{{site.url}}/{{site.header_image}}" alt="Photo of {{site.author}}"/>
       </a>
       <h1 class="brand-title text-base font-bold uppercase tracking-wider mt-1 mb-0 text-center">
         <a href="/" class="text-gray-800 hover:text-orange-600 transition-colors dark:text-white dark:hover:text-orange-400">{{site.title}}</a>
@@ -75,14 +116,16 @@
       <h2 class="brand-tagline text-xs text-gray-600 mb-2 text-center dark:text-gray-300">{{site.description}}</h2>
       {%- include links.html -%}
     </aside>
-    <main class="flex-1 min-w-0 h-full flex flex-col">
-      <div class="border-4 border-blue-500 bg-gray-50/95 shadow-2xl rounded-3xl p-8 md:p-14 flex-1 flex flex-col h-full backdrop-blur-sm dark:bg-gray-900/95 dark:border-blue-400">
+    
+    <!-- Main Content -->
+    <main id="main-content" class="flex-1 min-w-0 h-full flex flex-col">
+      <div class="border-4 border-blue-500 bg-gray-50/95 shadow-2xl rounded-3xl p-4 sm:p-6 lg:p-8 xl:p-14 flex-1 flex flex-col h-full backdrop-blur-sm dark:bg-gray-900/95 dark:border-blue-400">
         <div class="md-display"></div>
         <div class="content-col flex-1 flex flex-col">
-                {{ content }}
-                {%-include footer.html -%}
+          {{ content }}
+          {%-include footer.html -%}
         </div>
-    </div>
+      </div>
     </main>
   </div>
 
@@ -164,101 +207,88 @@
                              
                              // Update all paragraphs in post body
                              const postParagraphs = document.querySelectorAll('.post-body p');
-                             postParagraphs.forEach(function(p) {
+                             postParagraphs.forEach(p => {
                                p.style.setProperty('font-size', size + 'rem', 'important');
                              });
                              
-                             // Update all list items in post body
-                             const postListItems = document.querySelectorAll('.post-body li');
-                             postListItems.forEach(function(li) {
-                               li.style.setProperty('font-size', size + 'rem', 'important');
-                             });
-                             
-                             // Update images in post content
-                             const postImages = document.querySelectorAll('.post-body img');
-                             postImages.forEach(function(img) {
-                               const baseWidth = img.getAttribute('data-original-width') || img.naturalWidth || img.offsetWidth;
-                               if (!img.getAttribute('data-original-width')) {
-                                 img.setAttribute('data-original-width', baseWidth);
-                               }
-                               const scaleFactor = size / 1.0; // Scale relative to base size
-                               img.style.width = (baseWidth * scaleFactor) + 'px';
-                               img.style.height = 'auto';
-                               img.style.maxWidth = '100%';
+                             // Update all headings in post body
+                             const postHeadings = document.querySelectorAll('.post-body h1, .post-body h2, .post-body h3, .post-body h4, .post-body h5, .post-body h6');
+                             postHeadings.forEach(h => {
+                               const headingSize = h.tagName === 'H1' ? size * 1.8 : 
+                                                  h.tagName === 'H2' ? size * 1.5 : 
+                                                  h.tagName === 'H3' ? size * 1.3 : 
+                                                  h.tagName === 'H4' ? size * 1.1 : size;
+                               h.style.setProperty('font-size', headingSize + 'rem', 'important');
                              });
                              
                              localStorage.setItem('textSize', size);
                            }
 
-                           // Slider event listener
-                           textSizeSlider.addEventListener('input', (e) => {
-                             updateTextSize(e.target.value);
+                           // Text size slider event listener
+                           textSizeSlider.addEventListener('input', function() {
+                             updateTextSize(this.value);
                            });
 
-                           // Initialize text size on page load
-                           updateTextSize(textSizeSlider.value);
+                           // Search functionality
+                           const searchButton = document.getElementById('searchButton');
+                           const searchModal = document.getElementById('searchModal');
+                           const closeSearch = document.getElementById('closeSearch');
+
+                           // Open search modal
+                           searchButton.addEventListener('click', function() {
+                             searchModal.classList.remove('hidden');
+                             document.getElementById('search-input').focus();
+                           });
+
+                           // Close search modal
+                           function closeSearchModal() {
+                             searchModal.classList.add('hidden');
+                           }
+
+                           closeSearch.addEventListener('click', closeSearchModal);
+
+                           // Close modal when clicking outside
+                           searchModal.addEventListener('click', function(e) {
+                             if (e.target === searchModal) {
+                               closeSearchModal();
+                             }
+                           });
+
+                           // Close modal with Escape key
+                           document.addEventListener('keydown', function(e) {
+                             if (e.key === 'Escape' && !searchModal.classList.contains('hidden')) {
+                               closeSearchModal();
+                             }
+                           });
+
+                           // Search functionality
+                           function changeResultContainerDisp(val) {
+                             if (val) {
+                               document.getElementById("results-container").style.display = "block";
+                               document.getElementById("search-input").addEventListener("blur", function () {
+                                 document.addEventListener("click", function (event) {
+                                   var isClickInside = document.getElementById("results-container").contains(event.target);
+                                   if (!isClickInside) {
+                                     document.getElementById("results-container").style.display = "none";
+                                   }
+                                 })
+                               })
+                             } else {
+                               document.getElementById("results-container").style.display = "none";
+                             }
+                           }
+
+                           // Initialize Simple Jekyll Search
+                           var sjs = SimpleJekyllSearch({
+                             searchInput: document.getElementById("search-input"),
+                             resultsContainer: document.getElementById("results-container"),
+                             json: "/search.json",
+                             searchResultTemplate: "<li class='search_res' style='list-style: none; margin-bottom: 0.5rem;'><a href='{{ site.url }}{url}' class='block p-3 rounded-lg transition-colors duration-300'><p class='font-semibold text-lg'>{title}</p></a></li>",
+                             noResultsText: "<li class='text-center p-4'>No results found. Try another search.</li>",
+                             fuzzy: false,
+                             limit: 12
+                           });
                          </script>
-
-                     <!-- Search Functionality -->
-            <script>
-              // Search modal controls
-              const searchButton = document.getElementById('searchButton');
-              const searchModal = document.getElementById('searchModal');
-              const closeSearch = document.getElementById('closeSearch');
-
-              // Open search modal
-              searchButton.addEventListener('click', function() {
-                searchModal.classList.remove('hidden');
-                document.getElementById('search-input').focus();
-              });
-
-              // Close search modal
-              closeSearch.addEventListener('click', function() {
-                searchModal.classList.add('hidden');
-              });
-
-              // Close modal when clicking outside
-              searchModal.addEventListener('click', function(e) {
-                if (e.target === searchModal) {
-                  searchModal.classList.add('hidden');
-                }
-              });
-
-              // Close modal with Escape key
-              document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && !searchModal.classList.contains('hidden')) {
-                  searchModal.classList.add('hidden');
-                }
-              });
-
-              // Search functionality
-              function changeResultContainerDisp(val) {
-                if (val) {
-                  document.getElementById("results-container").style.display = "block";
-                  document.getElementById("search-input").addEventListener("blur", function () {
-                    document.addEventListener("click", function (event) {
-                      var isClickInside = document.getElementById("results-container").contains(event.target);
-                      if (!isClickInside) {
-                        document.getElementById("results-container").style.display = "none";
-                      }
-                    })
-                  })
-                } else {
-                  document.getElementById("results-container").style.display = "none";
-                }
-              }
-
-              // Initialize Simple Jekyll Search
-              var sjs = SimpleJekyllSearch({
-                searchInput: document.getElementById("search-input"),
-                resultsContainer: document.getElementById("results-container"),
-                json: "/search.json",
-                searchResultTemplate: "<li class='search_res' style='list-style: none; margin-bottom: 0.5rem;'><a href='{{ site.url }}{url}' class='block p-3 rounded-lg transition-colors duration-300'><p class='font-semibold text-lg'>{title}</p></a></li>",
-                noResultsText: "<li class='text-center p-4'>No results found. Try another search.</li>",
-                fuzzy: false,
-                limit: 12
-              });
-            </script>
 
             <!-- Code Block Copy and Collapse Functionality -->
             <script>
