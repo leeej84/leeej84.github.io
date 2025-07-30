@@ -1,0 +1,5 @@
+{
+  "version": "1.0",
+  "description": "Chrome DevTools configuration file",
+  "enabled": false
+} 

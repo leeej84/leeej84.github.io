@@ -1,0 +1,95 @@
+title: "Leee Jeffries - Technical Blog"
+email: 
+description: >- 
+  Technical blog covering Citrix, Microsoft, PowerShell, and enterprise IT solutions.
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+repository: 
+twitter: 
+github: 
+
+header_image: assets/profile.png
+
+google_analytics:
+comments: false
+disqus:
+
+author: "Leee Jeffries"
+author_bio: >-
+  Technical consultant specializing in Citrix, Microsoft, and enterprise IT solutions.
+
+author_pic: assets/Leee.jpg
+
+paginate: 5
+paginate_path: "/:num/"
+
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Build settings
+theme: null
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
+permalink: /:title
+
+# Asset handling
+include:
+  - _pages
+  - _posts
+  - assets
+  - images
+  - favicon_io
+
+# Defaults for posts
+defaults:
+  - scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts" # previously `post` in Jekyll 2.2.
+    values:
+      layout: "post"
+      author: "Leee Jeffries"
+      avatar: assets/profile-sm.png
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: post
+      content-type: notes
+  - scope:
+      path: ""
+      type: journals
+    values:
+      layout: journal-entry
+      content-type: journals
+
+# Allows all pages to be put into `_pages` folder
+# for easier navigation and better SEO.
+collections:
+  pages:
+    output: true
+    permalink: /:title
+  notes:
+    output: true
+    permalink: /notes/:title
+  journals:
+    output: true
+    permalink: /journals/:title
+
+# Exclude from processing.
+exclude:
+  - ".jekyll-cache"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "_BLANK_config.yml"
+  - "tmp"
+  - "_posts/2019-02-25-protocol-wars-rdp-vs-ica/images/2019-01-16-20_36_34-Greenshot.png"
+  - "_posts/2019-02-25-protocol-wars-rdp-vs-ica/images/2019-02-25-22_28_54-Win16-TaskWorker-Network_Bandwidth-Test-1-of-1-on-VM-XDSH-01-2019-02-12-10--1024x487.png"
+  - "_posts/2019-02-25-protocol-wars-rdp-vs-ica/images/2019-02-25-22_28_54-Win16-TaskWorker-Network_Bandwidth-Test-1-of-1-on-VM-XDSH-01-2019-02-12-10-.png"
+  - "_posts/2020-01-25-lab-in-a-suitcase/images/2020-01-25-17_25_50-High-Level-Configuration.vsdx-Visio-Professional-1024x713.png"
+  - "_posts/2020-01-25-lab-in-a-suitcase/images/2020-01-25-17_25_50-High-Level-Configuration.vsdx-Visio-Professional.png" 
