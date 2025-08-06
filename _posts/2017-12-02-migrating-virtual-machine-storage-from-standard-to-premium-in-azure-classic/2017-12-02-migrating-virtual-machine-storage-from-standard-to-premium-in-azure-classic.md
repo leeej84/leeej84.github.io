@@ -37,26 +37,48 @@ Ensure that the VM is powered off in the Azure portal before running this script
 
 Here is the powershell script I used:
 
-\[cc lang=“powershell”\]
+```powershell
+#List out the VHD's that need to be copied just for reference
+#VHD 1 P0 – VM_VHD1.vhd
+#VHD 2 P1 - VM_VHD2.vhd
 
-#List out the VHD's that need to be copied just for reference #VHD 1 P0 – VM\_VHD1.vhd #VHD 2 P1 - VM\_VHD2.vhd
+#To login to the Azure Classic Portal
+#login - Add-AzureAccount
+Add-AzureAccount
 
-#To login to the Azure Classic Portal #login - Add-AzureAccount Add-AzureAccount
+# VHD blob to copy
+$blobName = "VM_VHD1.vhd"
+$blobName1 = "VM_VHD2.vhd"
 
-\# VHD blob to copy # $blobName = "VM\_VHD1.vhd" $blobName1 = "VM\_VHD2.vhd"
+# Source Storage Account Information
+$sourceStorageAccountName = "<SOURCE STORAGE ACCOUNT NAME>"
+$sourceKey = "<SOURCE STORAGE KEY>"
+$sourceContext = New-AzureStorageContext –StorageAccountName $sourceStorageAccountName -StorageAccountKey $sourceKey
+$sourceContainer = "<CONTAINER NAME>"
 
-\# Source Storage Account Information # $sourceStorageAccountName = "<SOURCE STORAGE ACCOUNT NAME>" $sourceKey = "<SOURCE STORAGE KEY>" $sourceContext = New-AzureStorageContext –StorageAccountName $sourceStorageAccountName -StorageAccountKey $sourceKey $sourceContainer = "<CONTAINER NAME>"
+# Destination Storage Account Information
+$destinationStorageAccountName = "<DESTINATION STORAGE ACCOUNT NAME>"
+$destinationKey = "<DESTINATION STORAGE KEY>"
+$destinationContext = New-AzureStorageContext –StorageAccountName $destinationStorageAccountName -StorageAccountKey $destinationKey
 
-\# Destination Storage Account Information # $destinationStorageAccountName = "<DESTINATION STORAGE ACCOUNT NAME>" $destinationKey = "<DESTINATION STORAGE KEY>" $destinationContext = New-AzureStorageContext –StorageAccountName $destinationStorageAccountName -StorageAccountKey $destinationKey
+# Create the destination container
+$destinationContainerName = "<CONTAINER NAME>"
+New-AzureStorageContainer -Name $destinationContainerName -Context $destinationContext
 
-\# Create the destination container # $destinationContainerName = "<CONTAINER NAME>" New-AzureStorageContainer -Name $destinationContainerName -Context $destinationContext#
+# Copy the blob
+$blobCopy = Start-AzureStorageBlobCopy -DestContainer $destinationContainerName -DestContext $destinationContext -SrcBlob $blobName -Context $sourceContext -SrcContainer $sourceContainer
+$blobCopy1 = Start-AzureStorageBlobCopy -DestContainer $destinationContainerName -DestContext $destinationContext -SrcBlob $blobName1 -Context $sourceContext -SrcContainer $sourceContainer
 
-\# Copy the blob # $blobCopy = Start-AzureStorageBlobCopy -DestContainer $destinationContainerName -DestContext $destinationContext -SrcBlob $blobName -Context $sourceContext -SrcContainer $sourceContainer $blobCopy1 = Start-AzureStorageBlobCopy -DestContainer $destinationContainerName -DestContext $destinationContext -SrcBlob $blobName1 -Context $sourceContext -SrcContainer $sourceContainer
+#Get Status of the Job as it copies
+while(($blobCopy | Get-AzureStorageBlobCopyState).Status -eq "Pending") {
+    Start-Sleep -s 10
+    $blobCopy | Get-AzureStorageBlobCopyState
+    $blobCopy1 | Get-AzureStorageBlobCopyState
+}
 
-#Get Status of the Job as it copies while(($blobCopy | Get-AzureStorageBlobCopyState).Status -eq "Pending") { Start-Sleep -s 10 $blobCopy | Get-AzureStorageBlobCopyState $blobCopy1 | Get-AzureStorageBlobCopyState }
-
-#To Cancel a job if you decided you have waited too long #$blobCopy1 | Stop-AzureStorageBlobCopy #$blobCopy2 | Stop-AzureStorageBlobCopy
-
+#To Cancel a job if you decided you have waited too long
+#$blobCopy1 | Stop-AzureStorageBlobCopy
+#$blobCopy2 | Stop-AzureStorageBlobCopy
 ```
 
 A few notes:

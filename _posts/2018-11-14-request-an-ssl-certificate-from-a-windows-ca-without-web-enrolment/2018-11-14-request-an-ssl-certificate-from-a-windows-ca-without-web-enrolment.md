@@ -15,7 +15,44 @@ The Internet Information Server (IIS) provide wizards in the administration user
 
 Use Notepad to modify the following sample INF file according to your needs. Save the file as ssl.inf for example
 
-\[cc\] \[Version\] Signature="$Windows NT$" \[NewRequest\] Subject = "CN=SERVER.DOMAIN.COM" ; For a wildcard use "CN=\*.DOMAIN.COM" ; For an empty subject use the following line instead or remove the Subject line entirely ; Subject = Exportable = TRUE ; Private key is not exportable KeyLength = 2048 ; Common key sizes: 512, 1024, 2048, 4096, 8192, 16384 KeySpec = 1 ; AT\_KEYEXCHANGE KeyUsage = 0xA0 ; Digital Signature, Key Encipherment MachineKeySet = True ; The key belongs to the local computer account ProviderName = "Microsoft RSA SChannel Cryptographic Provider" ProviderType = 12 SMIME = FALSE RequestType = CMC ; At least certreq.exe shipping with Windows Vista/Server 2008 is required to interpret the \[Strings\] and \[Extensions\] sections below \[Strings\] szOID\_SUBJECT\_ALT\_NAME2 = "2.5.29.17" szOID\_ENHANCED\_KEY\_USAGE = "2.5.29.37" szOID\_PKIX\_KP\_SERVER\_AUTH = "1.3.6.1.5.5.7.3.1" szOID\_PKIX\_KP\_CLIENT\_AUTH = "1.3.6.1.5.5.7.3.2" \[Extensions\] %szOID\_SUBJECT\_ALT\_NAME2% = "{text}dns=computer1.domain.com&dns=computer2.domain.com" %szOID\_ENHANCED\_KEY\_USAGE% = "{text}%szOID\_PKIX\_KP\_SERVER\_AUTH%,%szOID\_PKIX\_KP\_CLIENT\_AUTH%" \[RequestAttributes\] CertificateTemplate= WebServer \[/cc\]
+```ini
+[Version]
+Signature="$Windows NT$"
+
+[NewRequest]
+Subject = "CN=SERVER.DOMAIN.COM"
+; For a wildcard use "CN=*.DOMAIN.COM"
+; For an empty subject use the following line instead or remove the Subject line entirely
+; Subject =
+Exportable = TRUE
+; Private key is not exportable
+KeyLength = 2048
+; Common key sizes: 512, 1024, 2048, 4096, 8192, 16384
+KeySpec = 1
+; AT_KEYEXCHANGE
+KeyUsage = 0xA0
+; Digital Signature, Key Encipherment
+MachineKeySet = True
+; The key belongs to the local computer account
+ProviderName = "Microsoft RSA SChannel Cryptographic Provider"
+ProviderType = 12
+SMIME = FALSE
+RequestType = CMC
+; At least certreq.exe shipping with Windows Vista/Server 2008 is required to interpret the [Strings] and [Extensions] sections below
+
+[Strings]
+szOID_SUBJECT_ALT_NAME2 = "2.5.29.17"
+szOID_ENHANCED_KEY_USAGE = "2.5.29.37"
+szOID_PKIX_KP_SERVER_AUTH = "1.3.6.1.5.5.7.3.1"
+szOID_PKIX_KP_CLIENT_AUTH = "1.3.6.1.5.5.7.3.2"
+
+[Extensions]
+%szOID_SUBJECT_ALT_NAME2% = "{text}dns=computer1.domain.com&dns=computer2.domain.com"
+%szOID_ENHANCED_KEY_USAGE% = "{text}%szOID_PKIX_KP_SERVER_AUTH%,%szOID_PKIX_KP_CLIENT_AUTH%"
+
+[RequestAttributes]
+CertificateTemplate= WebServer
+```
 
 **Notes:**
 
