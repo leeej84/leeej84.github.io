@@ -1,0 +1,4 @@
+# Development configuration - overrides main _config.yml
+# Use this for local development: bundle exec jekyll serve --config _config.yml,_config_dev.yml
+
+url: "http://192.168.2.85:4000" 

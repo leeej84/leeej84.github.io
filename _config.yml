@@ -4,7 +4,7 @@ description: >-
   Technical blog covering Citrix, Microsoft, PowerShell, and enterprise IT solutions.
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://leeejeffries.com" # the base hostname & protocol for your site, e.g. http://example.com
 repository: 
 twitter: 
 github: 
@@ -17,7 +17,7 @@ disqus:
 
 author: "Leee Jeffries"
 author_bio: >-
-  Technical consultant specializing in Citrix, Microsoft, and enterprise IT solutions.
+  Technical consultant specializing in Citrix, Microsoft, PowerShell, and enterprise IT solutions.
 
 author_pic: assets/Leee.jpg
 
