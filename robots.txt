@@ -2,4 +2,21 @@
 layout: null
 ---
 User-agent: *
-Sitemap: {{ site.url }}/sitemap.xml
+Allow: /
+
+# Sitemap
+Sitemap: https://leeejeffries.com/sitemap.xml
+
+# Disallow admin and temporary files
+Disallow: /_site/
+Disallow: /tmp/
+Disallow: /.jekyll-cache/
+Disallow: /Gemfile
+Disallow: /Gemfile.lock
+
+# Allow important assets
+Allow: /assets/
+Allow: /images/
+Allow: /favicon_io/
+Allow: /_posts/
+Allow: /_pages/

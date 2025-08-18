@@ -1,0 +1,360 @@
+/* Mobile-Specific Performance Optimizations */
+
+/* Mobile-first optimizations */
+@media (max-width: 1023px) {
+    /* Optimize typography for mobile */
+    body {
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    }
+    
+    /* Optimize headings for mobile */
+    h1 { font-size: 1.75rem; margin-bottom: 1rem; }
+    h2 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+    
+    /* Optimize images for mobile */
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 1rem auto;
+    }
+    
+    /* Optimize tables for mobile */
+    table {
+        font-size: 14px;
+        overflow-x: auto;
+        display: block;
+        white-space: nowrap;
+    }
+    
+    th, td {
+        padding: 8px 12px;
+        min-width: 100px;
+    }
+    
+    /* Optimize code blocks for mobile */
+    .highlight {
+        font-size: 13px;
+        line-height: 1.4;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .highlight pre {
+        padding: 12px;
+        margin: 0;
+    }
+    
+    /* Optimize navigation for mobile */
+    .lg\:hidden.bg-gray-900\/95 {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+    
+    .lg\:hidden a[title] {
+        min-width: 48px;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        touch-action: manipulation;
+    }
+    
+    /* Optimize content layout for mobile */
+    main {
+        padding: 1rem;
+        margin-top: 0;
+    }
+    
+    .post {
+        margin-bottom: 2rem;
+        padding: 1rem;
+        border-radius: 8px;
+    }
+    
+    /* Optimize search for mobile */
+    #searchModal {
+        padding: 1rem;
+    }
+    
+    .search-input {
+        font-size: 16px;
+        padding: 12px 16px;
+        width: 100%;
+        max-width: none;
+    }
+    
+    /* Optimize forms for mobile */
+    input, textarea, select {
+        font-size: 16px;
+        padding: 12px;
+        border-radius: 8px;
+        border: 2px solid #e5e7eb;
+    }
+    
+    input:focus, textarea:focus, select:focus {
+        border-color: #3b82f6;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+    
+    /* Optimize buttons for mobile */
+    button, .button {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 12px 16px;
+        font-size: 16px;
+        touch-action: manipulation;
+    }
+    
+    /* Optimize links for mobile */
+    a {
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: rgba(59, 130, 246, 0.3);
+    }
+    
+    /* Optimize sidebar for mobile */
+    .sidebar {
+        display: none;
+    }
+    
+    /* Optimize mobile navigation */
+    .mobile-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(17, 24, 39, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
+    
+    /* Optimize for touch devices */
+    @media (hover: none) and (pointer: coarse) {
+        /* Increase touch targets */
+        a, button, input, select, textarea {
+            min-height: 44px;
+            min-width: 44px;
+        }
+        
+        /* Optimize scrolling */
+        * {
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        /* Remove hover effects on touch devices */
+        a:hover, button:hover {
+            transform: none;
+            box-shadow: none;
+        }
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 640px) {
+    body {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+    
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.25rem; }
+    h3 { font-size: 1.125rem; }
+    
+    main {
+        padding: 0.75rem;
+    }
+    
+    .post {
+        padding: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .lg\:hidden a[title] {
+        min-width: 40px;
+        min-height: 40px;
+    }
+    
+    /* Optimize images for small screens */
+    img {
+        margin: 0.75rem auto;
+    }
+    
+    /* Optimize tables for small screens */
+    table {
+        font-size: 12px;
+    }
+    
+    th, td {
+        padding: 6px 8px;
+        min-width: 80px;
+    }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    
+    h1 { font-size: 1.375rem; }
+    h2 { font-size: 1.125rem; }
+    h3 { font-size: 1rem; }
+    
+    main {
+        padding: 0.5rem;
+    }
+    
+    .post {
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .lg\:hidden a[title] {
+        min-width: 36px;
+        min-height: 36px;
+    }
+    
+    /* Optimize search for very small screens */
+    #searchModal {
+        padding: 0.5rem;
+    }
+    
+    .search-input {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+}
+
+/* Mobile landscape orientation */
+@media (max-width: 1023px) and (orientation: landscape) {
+    .lg\:hidden.bg-gray-900\/95 {
+        padding: 0.5rem 1rem;
+    }
+    
+    .lg\:hidden a[title] {
+        min-width: 40px;
+        min-height: 40px;
+    }
+    
+    main {
+        margin-top: 0.5rem;
+    }
+}
+
+/* Mobile portrait orientation */
+@media (max-width: 1023px) and (orientation: portrait) {
+    .lg\:hidden.bg-gray-900\/95 {
+        padding: 0.75rem 1rem;
+    }
+    
+    main {
+        margin-top: 1rem;
+    }
+}
+
+/* High DPI mobile displays */
+@media (-webkit-min-device-pixel-ratio: 2) and (max-width: 1023px) {
+    img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Mobile performance optimizations */
+@media (max-width: 1023px) {
+    /* Reduce animations on mobile for better performance */
+    * {
+        animation-duration: 0.2s !important;
+        transition-duration: 0.2s !important;
+    }
+    
+    /* Optimize scrolling performance */
+    html, body {
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: auto;
+    }
+    
+    /* Reduce box shadows on mobile for better performance */
+    .post, button, .button {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Optimize backdrop filters for mobile */
+    .lg\:hidden.bg-gray-900\/95,
+    #searchModal {
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+    
+    /* Reduce blur effects on mobile for better performance */
+    .brand-photo {
+        filter: none;
+    }
+}
+
+/* Mobile accessibility improvements */
+@media (max-width: 1023px) {
+    /* Ensure sufficient color contrast */
+    .post-body {
+        color: #1f2937;
+    }
+    
+    .post-body a {
+        color: #1d4ed8;
+        text-decoration: underline;
+    }
+    
+    /* Improve focus indicators for mobile */
+    a:focus, button:focus, input:focus, select:focus, textarea:focus {
+        outline: 2px solid #3b82f6;
+        outline-offset: 2px;
+    }
+    
+    /* Ensure readable font sizes */
+    .post-body {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    .post-body p {
+        margin-bottom: 1rem;
+    }
+    
+    .post-body li {
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Mobile print optimizations */
+@media print and (max-width: 1023px) {
+    .lg\:hidden, #searchModal, .sidebar {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+        color: #000;
+        background: #fff;
+    }
+    
+    .post {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+    }
+    
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+}
